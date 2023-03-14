@@ -38,6 +38,7 @@ abstract class BaseController extends Controller
     protected $helpers = [];
 
     protected $model;
+    protected $model1;
 
     /**
      * Be sure to declare properties for any property fetch you initialized.

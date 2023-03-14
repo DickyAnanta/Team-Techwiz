@@ -1,22 +1,41 @@
 <?php
 
-namespace App\Modules\User\Controllers;
+namespace App\Modules\Menu\Controllers;
 
-use App\Modules\User\Models\UserModel;
-use App\Modules\User\Models\ProfileModel;
+use App\Modules\Menu\Models\MenuModel;
 
-class User extends \App\Controllers\BaseController
+class Menu extends \App\Controllers\BaseController
 {
     public function __construct()
     {
-        $this->model = new UserModel;
-        $this->model1 = new ProfileModel;
+        $this->model = new MenuModel;
+    }
+
+    protected function do_upload($field)
+    {
+        $ret = [
+            "response" => false,
+            "fileupload" => ""
+        ];
+        //$request = \Config\Services::request();
+        $file = $this->request->getFile($field);
+        $ext = $file->getClientExtension(); // Mengetahui extensi File
+
+        $direktori = ROOTPATH . 'public/assets/upload/images'; //definisikan direktori upload
+        $namabaru = "menu-" . date("YmdHis") . '.' . $ext; //definisikan nama fiel yang baru
+
+        if ($file->move($direktori, $namabaru)) {
+            $ret["response"] = true;
+            $ret["fileupload"] = $namabaru;
+        }
+
+        return $ret;
     }
 
     public function index()
     {
         $datas = [
-            "select" => "user.id, username, nama, password, email, kelamin, tanggal_lahir, telepon, alamat, status, role",
+            "select" => "title, deskripsi, gambar, tipe, harga, stok",
             "getreturn" => "data",
             "order_by" => [
                 "column" => "",
@@ -28,18 +47,17 @@ class User extends \App\Controllers\BaseController
             ],
             "whereclause" => ""
         ];
-        $ret = $this->model->user(0, $datas, "get");
+        $ret = $this->model->menu(0, $datas, "get");
         return view('admin/index', $ret);
     }
 
     public function edit($id = '')
     {
-        // dd($id);
         $ret = [];
         $dt_post = @$this->request->getPost();
+
         if (!empty($dt_post)) {
-            // dd($dt_post);
-            $exists = $this->model->exists($dt_post['username']);
+            $exists = $this->model->exists($dt_post['title']);
             if (empty($id)) {
                 if ($exists) {
                     $ret['alert'] = [
@@ -51,52 +69,25 @@ class User extends \App\Controllers\BaseController
                         'redirect_to' => ''
                     ];
                 } else {
-                    $dt_user_pre_post = [
-                        "username" => $dt_post['username'],
-                        "password" => $dt_post['password'],
-                        "email" => $dt_post['email'],
+                    $upload_gamber = $this->do_upload("gambar");
+                    $dt_menu_pre_post = [
+                        "title" => $dt_post['title'],
+                        "deskripsi" => $dt_post['deskripsi'],
+                        "gambar" => ($upload_gamber["response"] === true) ? $upload_gamber["fileupload"] : "",
+                        "tipe" => $dt_post['tipe'],
+                        "harga" => $dt_post['harga'],
+                        "stok" => $dt_post['stok'],
+                        "created_by" => ""
                     ];
-                    if (!empty($id)) {
-                        $dt_user_pre_post["updated_by"] = 1;
-                        if (!empty($dt_post["password"])) {
-                            $dt_user_pre_post["password"] = password_hash($dt_post["password"], PASSWORD_DEFAULT);
-                        }
-                    } else {
-                        $dt_user_pre_post["password"] = password_hash($dt_post["password"], PASSWORD_DEFAULT);
-                    }
-
-                    $data = [
-                        "username" => $dt_post["username"],
-                        "email" => $dt_post["email"],
-                        "password" => $dt_user_pre_post["password"],
-                        "status" => "",
-                        "role" => "",
-                        "created_by" => "",
-                    ];
-                    $sv_data = @$this->model->user(0, $data, "post");
+                    $sv_data = @$this->model->menu(0, $dt_menu_pre_post, "post");
                     if ($sv_data['response']) {
-                        $dt_profile_pre_post = [
-                            "nama" => $dt_post['nama'],
-                            "kelamin" => $dt_post['kelamin'],
-                            "ttl" => $dt_post['ttl'],
-                            "telepon" => $dt_post['telepon'],
-                        ];
-                        $data = [
-                            'user_id' => $sv_data['last_insert_id'],
-                            'nama' => $dt_post['nama'],
-                            'kelamin' => $dt_post['kelamin'],
-                            'tanggal_lahir' => $dt_post['ttl'],
-                            'telepon' => $dt_post['telepon'],
-                            'alamat' => $dt_post['alamat']
-                        ];
-                        $sql2 = $this->model1->profile(0, $data, "post");
                         $ret['alert'] = [
                             'title' => 'Success',
                             'type' => 'success',
                             'message' => 'Data berhasil ditambahkan',
                             'cobtn' => false,
                             'redirect' => true,
-                            'redirect_to' => '/'
+                            'redirect_to' => '/menu'
                         ];
                     } else {
                         $ret['alert'] = [
@@ -111,24 +102,33 @@ class User extends \App\Controllers\BaseController
                 }
             } else {
                 if (decrypt_url($id) == @$exists['id'] || ($exists == false)) {
+                    $get_detailed = $data = $this->model->detailed($id);
+                    if (!empty($_FILES['gambar']['name'])) {
+                        helper('filesystem');
+                        $direktori = ROOTPATH . 'public/assets/upload/images/';
+                        $map = directory_map($direktori, FALSE, TRUE);
+
+                        /* Cek File apakah ada */
+                        foreach ($map as $key) {
+                            if ($key == $get_detailed["gambar"]) {
+                                delete_files($direktori, $get_detailed["gambar"]);
+                            }
+                        }
+
+                        $upload_gamber = $this->do_upload("gambar");
+                    }
+
                     $data = [
-                        "username" => $dt_post["username"],
-                        "email" => $dt_post["email"],
-                        "status" => "",
-                        "role" => "",
-                        "created_by" => "",
+                        "title" => $dt_post["title"],
+                        "deskripsi" => $dt_post["deskripsi"],
+                        "gambar" => (@$upload_gamber["response"] === true) ? $upload_gamber["fileupload"] : $get_detailed["gambar"],
+                        "tipe" => $dt_post['tipe'],
+                        "harga" => $dt_post['harga'],
+                        "stok" => $dt_post['stok'],
+                        "updated_by" => "",
                     ];
-                    $sv_data2 = @$this->model->user($id, $data, "patch");
-                    // dd($sv_data2);
+                    $sv_data2 = @$this->model->menu($id, $data, "patch");
                     if ($sv_data2['response']) {
-                        $data = [
-                            'nama' => $dt_post['nama'],
-                            'kelamin' => $dt_post['kelamin'],
-                            'tanggal_lahir' => $dt_post['tanggal_lahir'],
-                            'telepon' => $dt_post['telepon'],
-                            'alamat' => $dt_post['alamat']
-                        ];
-                        $sql2 = $this->model1->profile($id, $data, "patch");
                         $ret['alert'] = [
                             'title' => 'Succsess',
                             'type' => 'success',

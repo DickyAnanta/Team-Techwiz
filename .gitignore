@@ -66,6 +66,9 @@ writable/debugbar/*
 writable/**/*.db
 writable/**/*.sqlite
 
+public/assets/upload/images/*
+!public/assets/upload/images/.keepgit
+
 php_errors.log
 
 #-------------------------

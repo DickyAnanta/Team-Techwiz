@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Modules\User\Models;
+namespace App\Modules\Menu\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class MenuModel extends Model
 {
-    protected $tableuser      = 'user';
-    protected $primary_column = 'username';
+    protected $tablemenu      = 'menu';
+    protected $primary_column = 'title';
 
     protected function whereclause_system()
     {
@@ -18,7 +18,7 @@ class UserModel extends Model
     public function exists($item = 0)
     {
         $ret = false;
-        $query = "SELECT * FROM " . $this->tableuser;
+        $query = "SELECT * FROM " . $this->tablemenu;
         if (empty($this->primary_column)) {
             return "primary column be not empty";
         }
@@ -34,9 +34,8 @@ class UserModel extends Model
     {
         $ret = false;
         if (!empty($id)) {
-            $query = "SELECT * FROM " . $this->tableuser;
-            $query .= " INNER JOIN profile ON profile.user_id = user.id";
-            $query .= " WHERE user.id = " . decrypt_url($id);
+            $query = "SELECT * FROM " . $this->tablemenu;
+            $query .= " WHERE menu.id = " . decrypt_url($id);
             $data = $this->db->query($query)->getRowArray();
             if (!empty($data)) {
                 $ret = $data;
@@ -45,7 +44,7 @@ class UserModel extends Model
         }
     }
 
-    public function user($id = 0, $datas = "", $type = "")
+    public function menu($id = 0, $datas = "", $type = "")
     {
         $ret = false;
         if (empty($type)) {
@@ -69,17 +68,8 @@ class UserModel extends Model
             $colum = "(" . substr($colum, 0, -2) . ")";
             $values = "(" . substr($values, 0, -2) . ")";
 
+            $sql = "INSERT INTO " . $this->tablemenu . " " . $colum . "VALUE" . $values;
 
-            // if (!empty($datas['password'])) {
-            //   $password = password_hash($datas['password'], PASSWORD_DEFAULT);
-            //   return $password;
-            // } 
-
-
-            $sql = "INSERT INTO " . $this->tableuser . " " . $colum . "VALUE" . $values;
-
-            // $this->join('profile', 'profile.IDprofile=nama.IDprofile')
-            //   ->get()->getResultArray();
             if ($this->db->query($sql)) {
                 $ret = [
                     "response" => true,
@@ -102,7 +92,7 @@ class UserModel extends Model
                     }
                 }
 
-                $sql = "INSERT INTO" . $this->tableuser . "SET" . substr($patch_column, 0, 2) . "WHERE id = " . $id;
+                $sql = "INSERT INTO" . $this->tablemenu . "SET" . substr($patch_column, 0, 2) . "WHERE id = " . $id;
                 if ($this->db->query($sql)) {
                     $ret = [
                         "response" => true,
@@ -129,7 +119,7 @@ class UserModel extends Model
                         $patch_column .= $key . " = '" . $value . "', ";
                     }
                 }
-                $sql = "UPDATE " . $this->tableuser . " SET " . substr($patch_column, 0, -2) . " WHERE id = " . $id;
+                $sql = "UPDATE " . $this->tablemenu . " SET " . substr($patch_column, 0, -2) . " WHERE id = " . $id;
                 if ($this->db->query($sql)) {
                     $ret = [
                         "response" => true,
@@ -151,13 +141,11 @@ class UserModel extends Model
             // -?whereclause
 
             $query = '';
-            $query .= "SELECT " . @$datas["select"] . " FROM " . $this->tableuser;
-            $query .= " INNER JOIN profile ON profile.user_id = user.id";
+            $query .= "SELECT " . @$datas["select"] . " FROM " . $this->tablemenu;
             if (!empty($this->whereclause_system())) {
                 $query .= " WHERE ";
             }
             $query .= $this->whereclause_system();
-            // dd($query);
 
             if (@$datas["getreturn"] == "data") {
                 $all_record = $this->db->query($query)->getNumRows();
@@ -203,7 +191,7 @@ class UserModel extends Model
             // } elseif ($datas == 2) {
             //   $query .= "DELETE FROM" . $this->tableuser . "WHERE id = " . decrypt_url($id) ;
             // }
-            $query .=   " DELETE FROM " . $this->tableuser . " WHERE id = " . decrypt_url($id);
+            $query .=   " DELETE FROM " . $this->tablemenu . " WHERE id = " . decrypt_url($id);
 
             if ($this->db->query($query)) {
                 $ret = true;
@@ -222,7 +210,7 @@ class UserModel extends Model
 
         if (!empty($id)) {
             $id = decrypt_url($id);
-            $query_next = "SELECT" . $this->tableuser . " id.FROM " . $this->tableuser . "WHERE" . $this;
+            $query_next = "SELECT" . $this->tablemenu . " id.FROM " . $this->tablemenu . "WHERE" . $this;
         }
     }
 }
