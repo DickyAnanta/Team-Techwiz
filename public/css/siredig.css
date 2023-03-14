@@ -1,0 +1,377 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+  :root {
+      --primary: #00FF80;
+      --m: #99D5BF;
+      --tua: #579981;
+      --muda: #C7E6C9;
+      --putih: #fff;
+  }
+
+  body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #D9D9D9;
+  }
+
+  /* navbar start */
+  .bar {
+      font-weight: 500;
+      color: #000;
+      transition: 0.5s;
+  }
+
+  .masuk {
+      font-weight: 500;
+      padding: 3px 10px;
+      transition: 0.5s;
+      color: var(--tua);
+      border: 2px solid var(--tua);
+      border-radius: 5px;
+      background-color: transparent;
+  }
+
+  .masuk:hover {
+      background-color: var(--tua);
+      color: #fff;
+  }
+
+  .bar:hover {
+      border-bottom: 0.1rem solid var(--tua);
+      color: var(--tua);
+  }
+
+  .profile h3 {
+      font-size: 1rem;
+      font-weight: 500;
+  }
+
+  /* navbar end */
+
+
+  /* beranda start */
+  .header {
+      background-color: var(--putih);
+      border-radius: 15px;
+      padding: 5rem;
+  }
+
+  .header h1 {
+      font-size: 2.5rem;
+      color: #000;
+      font-weight: 600;
+      margin-bottom: 0px;
+  }
+
+  .header p {
+      font-size: 1rem;
+      color: #000;
+      margin-top: 3rem;
+      font-weight: 200;
+  }
+
+  .header a {
+      background-color: var(--primary);
+      padding: 5px 25px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+  }
+
+  .header a:hover {
+      background-color: var(--tua);
+      color: var(--putih);
+      transition: 0.3s;
+  }
+
+  .header h2 {
+      font-size: 1.5rem;
+      font-style: italic;
+      font-weight: 700;
+      margin-top: 0px;
+  }
+
+  .header p span {
+      font-weight: 500;
+  }
+
+  .header h1 span {
+      font-size: 2.5rem;
+      color: var(--primary);
+      font-weight: 700;
+  }
+
+  .main .head h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      color: #000;
+  }
+
+  .main .mb-3 {
+      font-weight: 300;
+      font-size: 1rem;
+      color: #000;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+  }
+
+  .main h3 {
+      font-weight: 600;
+      font-size: 1.7rem;
+  }
+
+  .header img {
+      height: 300px;
+      float: right;
+      width: auto;
+  }
+
+  .main {
+      background-color: var(--putih);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+  }
+
+  .main .judul {
+      flex-wrap: nowrap;
+      display: flex;
+      float: left;
+      margin-left: -23.7rem;
+  }
+
+  .main .judultiga {
+      flex-wrap: nowrap;
+      display: flex;
+      float: left;
+      margin-left: -28rem;
+  }
+
+  .main .judulempat {
+      margin-left: 2rem;
+      font-weight: 600;
+      font-size: 1.7rem;
+  }
+
+  .main .juduldua {
+      flex-wrap: nowrap;
+      display: flex;
+      float: left;
+      margin-left: -25.7rem;
+  }
+
+  .main .card .btn {
+      background-color: var(--primary);
+      padding: 4px 20px;
+      border-radius: 10px;
+      font-size: 0.7rem;
+      font-weight: 600;
+  }
+
+  .main .card .btn:hover {
+      background-color: var(--tua);
+      color: #fff;
+  }
+
+  .main h5 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #000;
+      margin-bottom: 3px;
+      margin-top: -3px;
+  }
+
+  .main .card {
+      border: 0;
+      box-shadow: none;
+      transition: 0.5s;
+  }
+
+  .main .card:hover {
+      padding: 0 1rem;
+      padding-top: 0.5rem;
+      background-color: transparent;
+      color: #fff;
+  }
+
+  .main p {
+      margin-bottom: 1px;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #000;
+  }
+
+  .main .row {
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+  }
+
+  /* beranda end */
+
+  /* viewproduk start */
+  .maindua h2 {
+      font-size: 35px;
+      font-weight: 500;
+      margin-bottom: 1rem;
+  }
+
+  .maindua .fa-arrow-left {
+      color: #000;
+  }
+
+  .maindua img {
+      width: 365px;
+  }
+
+  .maindua p {
+      font-size: 20px;
+      font-weight: 300;
+      width: 20rem;
+      margin-top: 3rem;
+  }
+
+  .maindua button {
+      height: 35px;
+      width: 100%;
+      border: none;
+      background-color: var(--primary);
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #fff;
+  }
+
+  .maindua button:hover {
+      background-color: var(--tua);
+      color: #fff;
+  }
+
+  .maindua h3 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-top: 3rem;
+  }
+
+  .maindua span {
+      float: right;
+  }
+
+
+  .maindua {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 5rem;
+  }
+
+  .maindua h2 span {
+      border-bottom: 2px solid #000;
+
+  }
+
+  /* vieweproduk end */
+
+
+  /* daftarmenu */
+  .daftarmenu .col-auto a {
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      color: var(--putih);
+      background-color: var(--primary);
+  }
+
+  .daftarmenu a,
+  .daftarmenu button {
+      font-size: 0.8rem;
+      font-weight: 500;
+      background-color: var(--primary);
+      padding: 0px 5px;
+      color: var(--putih);
+  }
+
+  .daftarmenu .btn {
+      margin: 0;
+  }
+
+  .daftarmenu a {
+      border-radius: 0;
+      color: var(--putih);
+  }
+
+
+  .daftarmenu th {
+      background-color: rgb(7, 7, 7);
+      color: var(--putih);
+  }
+
+  .daftarmenu img {
+      height: 3rem;
+      width: 3rem;
+  }
+
+  .daftarmenu .menu {
+      line-height: 50px;
+      height: 50px;
+      position: relative;
+  }
+
+  /* admin end */
+
+  /* order */
+  .container .order {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 1rem;
+  }
+
+  .order h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      color: #000;
+  }
+
+  .order p {
+      font: 300;
+      font-size: 1rem;
+      text-align: center;
+  }
+
+  .order .metode {
+      width: 15rem;
+      background-color: var(--primary);
+      padding: 1rem;
+      float: right;
+      border-radius: 5px;
+      height: 3rem;
+      margin-right: 10px;
+  }
+
+  .order .metode h3 {
+      font-size: 1rem;
+      color: #000;
+      font-weight: 500;
+  }
+
+  .order .row {
+      display: flex;
+      justify-content: center;
+  }
+
+  .order .metodedua h3 {
+      font-size: 1rem;
+      color: #000;
+      font-weight: 500;
+  }
+
+  .order .metodedua {
+      height: 3rem;
+      width: 15rem;
+      background-color: #D9D9D9;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-left: 10px;
+  }
+
+  /* order */

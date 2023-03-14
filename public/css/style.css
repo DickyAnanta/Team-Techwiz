@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #00FF80;
+    --m: #99D5BF;
+    --tua: #579981;
+    --muda: #C7E6C9;
+    --putih: #fff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* navbar start */
+.bar {
+    font-weight: 500;
+    color: #000;
+    margin-left: 3rem;
+}
+
+.bar:hover {
+    color: var(--primary);
+}
+
+/* navbar end */
+
+/* login start */
+.login-box i {
+    color: #000;
+}
+
+.login-box img {
+    display: block;
+    padding: auto;
+    margin: auto;
+    margin-bottom: 3.5rem;
+}
+
+.login-box .card {
+    width: 25rem;
+    padding: 0rem 1rem;
+    border-radius: 25px;
+    margin-left: -1rem;
+}
+
+.login-box .card-body {
+    background-color: transparent;
+}
+
+.login-box input {
+    width: 20.4rem;
+    height: 2rem;
+    margin: 0;
+    margin-bottom: 0;
+    border-radius: 5px;
+    border: 2px solid #f3f3f3;
+    font-size: 0.8rem;
+}
+
+.login-box p {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.login-box .btn {
+    background-color: var(--primary);
+    padding: 4px 8.85rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 0.8rem;
+}
+
+/* login end */
+
+/* menu */
+.menu img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 12.5rem;
+    height: auto;
+    background-size: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu .col-12 h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+.menu h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+}
+
+.menu p {
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #000;
+    margin: 0;
+    margin-bottom: 0px;
+}
+
+.menu a {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid #00FF80;
+    transition: 0.3s;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.menu .btn:hover {
+    color: var(--putih);
+    background-color: var(--primary);
+}
+
+/* admin */
+/* daftarmenu */
+.daftarmenu .col-auto a {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    color: var(--putih);
+    background-color: var(--primary);
+}
+
+.daftarmenu a,
+.daftarmenu button {
+    font-size: 0.8rem;
+    font-weight: 500;
+    background-color: var(--primary);
+    padding: 5px 10px;
+    color: var(--putih);
+}
+
+.daftarmenu .btn {
+    margin: 0;
+}
+
+.daftarmenu a {
+    border-radius: 0;
+    color: var(--putih);
+}
+
+
+.daftarmenu th {
+    background-color: rgb(7, 7, 7);
+    color: var(--putih);
+}
+
+.daftarmenu img {
+    height: 3rem;
+    width: 3rem;
+}
+
+.daftarmenu .menu {
+    line-height: 50px;
+    height: 50px;
+    position: relative;
+}
+
+/* admin end */
