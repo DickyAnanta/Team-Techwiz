@@ -20,8 +20,6 @@ class Login extends \App\Controllers\BaseController
         $session = session();
         $username = $this->model1->request->getVar('username');
         $password = $this->model1->request->getVar('password');
-        $username = "dickyananta";
-        $password = "12345";
         $data = $this->model1->where('username', $username)->first();
         if ($data) {
             $pass = $data['password'];
@@ -31,9 +29,7 @@ class Login extends \App\Controllers\BaseController
                     'username'     => $data['username'],
                     'logged_in'     => TRUE
                 ];
-                // dd($ses_data);
                 $session->set($ses_data);
-                // dd($_SESSION);
                 return redirect()->to('/');
             } else {
                 $session->setFlashdata('msg', 'Password salah');

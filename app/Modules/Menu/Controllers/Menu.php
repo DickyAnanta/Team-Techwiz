@@ -174,4 +174,9 @@ class Menu extends \App\Controllers\BaseController
 
         return view('admin/index', $ret);
     }
+
+    public function menu()
+    {
+        return view("public/index");
+    }
 }
