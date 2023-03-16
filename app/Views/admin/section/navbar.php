@@ -18,7 +18,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="../index.php" class="masuk ml-5">Keluar</a>
+                    <a href="/beranda" class="masuk ml-5">Keluar</a>
                 </li>
             </ul>
         </ul>

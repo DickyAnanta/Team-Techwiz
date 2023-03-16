@@ -18,7 +18,7 @@
     <div class="container">
         <div class="login-box">
             <img src="/assets/img/loogo.png" data-aos="fade-down" alt="" class="mx-auto">
-            <form action="/login/auth" method="post">
+            <form action="login/auth/" method="post">
                 <h2 class="mb-3" data-aos="fade-right" class="text-center">Login</h2>
                 <?php if (session()->getFlashdata('msg')) : ?>
                     <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
@@ -31,7 +31,7 @@
                         <input type="password" placeholder="Masukkan Password" class="form-control" name="password" id="password">
                     </div>
                     <button type="submit" data-aos="fade-right" data-aos-delay="300" class="btn btn-success w-100">Masuk</button>
-                    <a href="/berandauser" data-aos="fade-right" data-aos-delay="400" class="btn btn-warning mt-2 w-100 text-white">Kembali Ke Beranda</a>
+                    <a href="#" data-aos="fade-right" data-aos-delay="400" class="btn btn-warning mt-2 w-100 text-white">Kembali Ke Beranda</a>
             </form>
         </div>
     </div>

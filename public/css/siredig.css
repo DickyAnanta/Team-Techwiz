@@ -1,377 +1,917 @@
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-
-  :root {
-      --primary: #00FF80;
-      --m: #99D5BF;
-      --tua: #579981;
-      --muda: #C7E6C9;
-      --putih: #fff;
-  }
-
-  body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #D9D9D9;
-  }
-
-  /* navbar start */
-  .bar {
-      font-weight: 500;
-      color: #000;
-      transition: 0.5s;
-  }
-
-  .masuk {
-      font-weight: 500;
-      padding: 3px 10px;
-      transition: 0.5s;
-      color: var(--tua);
-      border: 2px solid var(--tua);
-      border-radius: 5px;
-      background-color: transparent;
-  }
-
-  .masuk:hover {
-      background-color: var(--tua);
-      color: #fff;
-  }
-
-  .bar:hover {
-      border-bottom: 0.1rem solid var(--tua);
-      color: var(--tua);
-  }
-
-  .profile h3 {
-      font-size: 1rem;
-      font-weight: 500;
-  }
-
-  /* navbar end */
-
-
-  /* beranda start */
-  .header {
-      background-color: var(--putih);
-      border-radius: 15px;
-      padding: 5rem;
-  }
-
-  .header h1 {
-      font-size: 2.5rem;
-      color: #000;
-      font-weight: 600;
-      margin-bottom: 0px;
-  }
-
-  .header p {
-      font-size: 1rem;
-      color: #000;
-      margin-top: 3rem;
-      font-weight: 200;
-  }
-
-  .header a {
-      background-color: var(--primary);
-      padding: 5px 25px;
-      border-radius: 10px;
-      font-size: 0.8rem;
-      font-weight: 600;
-  }
-
-  .header a:hover {
-      background-color: var(--tua);
-      color: var(--putih);
-      transition: 0.3s;
-  }
-
-  .header h2 {
-      font-size: 1.5rem;
-      font-style: italic;
-      font-weight: 700;
-      margin-top: 0px;
-  }
-
-  .header p span {
-      font-weight: 500;
-  }
-
-  .header h1 span {
-      font-size: 2.5rem;
-      color: var(--primary);
-      font-weight: 700;
-  }
-
-  .main .head h2 {
-      font-weight: 700;
-      font-size: 2rem;
-      color: #000;
-  }
-
-  .main .mb-3 {
-      font-weight: 300;
-      font-size: 1rem;
-      color: #000;
-      margin-top: 1rem;
-      margin-bottom: 3rem;
-  }
-
-  .main h3 {
-      font-weight: 600;
-      font-size: 1.7rem;
-  }
-
-  .header img {
-      height: 300px;
-      float: right;
-      width: auto;
-  }
-
-  .main {
-      background-color: var(--putih);
-      border-radius: 15px;
-      padding: 2rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-      display: flex;
-      justify-content: center;
-  }
-
-  .main .judul {
-      flex-wrap: nowrap;
-      display: flex;
-      float: left;
-      margin-left: -23.7rem;
-  }
-
-  .main .judultiga {
-      flex-wrap: nowrap;
-      display: flex;
-      float: left;
-      margin-left: -28rem;
-  }
-
-  .main .judulempat {
-      margin-left: 2rem;
-      font-weight: 600;
-      font-size: 1.7rem;
-  }
-
-  .main .juduldua {
-      flex-wrap: nowrap;
-      display: flex;
-      float: left;
-      margin-left: -25.7rem;
-  }
-
-  .main .card .btn {
-      background-color: var(--primary);
-      padding: 4px 20px;
-      border-radius: 10px;
-      font-size: 0.7rem;
-      font-weight: 600;
-  }
-
-  .main .card .btn:hover {
-      background-color: var(--tua);
-      color: #fff;
-  }
-
-  .main h5 {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #000;
-      margin-bottom: 3px;
-      margin-top: -3px;
-  }
-
-  .main .card {
-      border: 0;
-      box-shadow: none;
-      transition: 0.5s;
-  }
-
-  .main .card:hover {
-      padding: 0 1rem;
-      padding-top: 0.5rem;
-      background-color: transparent;
-      color: #fff;
-  }
-
-  .main p {
-      margin-bottom: 1px;
-      font-size: 1rem;
-      font-weight: 400;
-      color: #000;
-  }
-
-  .main .row {
-      flex-wrap: wrap;
-      display: flex;
-      justify-content: center;
-  }
-
-  /* beranda end */
-
-  /* viewproduk start */
-  .maindua h2 {
-      font-size: 35px;
-      font-weight: 500;
-      margin-bottom: 1rem;
-  }
-
-  .maindua .fa-arrow-left {
-      color: #000;
-  }
-
-  .maindua img {
-      width: 365px;
-  }
-
-  .maindua p {
-      font-size: 20px;
-      font-weight: 300;
-      width: 20rem;
-      margin-top: 3rem;
-  }
-
-  .maindua button {
-      height: 35px;
-      width: 100%;
-      border: none;
-      background-color: var(--primary);
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 500;
-      color: #fff;
-  }
-
-  .maindua button:hover {
-      background-color: var(--tua);
-      color: #fff;
-  }
-
-  .maindua h3 {
-      font-size: 20px;
-      font-weight: 500;
-      margin-top: 3rem;
-  }
-
-  .maindua span {
-      float: right;
-  }
-
-
-  .maindua {
-      background-color: #fff;
-      border-radius: 15px;
-      padding: 5rem;
-  }
-
-  .maindua h2 span {
-      border-bottom: 2px solid #000;
-
-  }
-
-  /* vieweproduk end */
-
-
-  /* daftarmenu */
-  .daftarmenu .col-auto a {
-      padding: 5px 10px;
-      font-size: 0.8rem;
-      color: var(--putih);
-      background-color: var(--primary);
-  }
-
-  .daftarmenu a,
-  .daftarmenu button {
-      font-size: 0.8rem;
-      font-weight: 500;
-      background-color: var(--primary);
-      padding: 0px 5px;
-      color: var(--putih);
-  }
-
-  .daftarmenu .btn {
-      margin: 0;
-  }
-
-  .daftarmenu a {
-      border-radius: 0;
-      color: var(--putih);
-  }
-
-
-  .daftarmenu th {
-      background-color: rgb(7, 7, 7);
-      color: var(--putih);
-  }
-
-  .daftarmenu img {
-      height: 3rem;
-      width: 3rem;
-  }
-
-  .daftarmenu .menu {
-      line-height: 50px;
-      height: 50px;
-      position: relative;
-  }
-
-  /* admin end */
-
-  /* order */
-  .container .order {
-      background-color: #fff;
-      border-radius: 15px;
-      padding: 1rem;
-  }
-
-  .order h2 {
-      font-weight: 700;
-      font-size: 2rem;
-      color: #000;
-  }
-
-  .order p {
-      font: 300;
-      font-size: 1rem;
-      text-align: center;
-  }
-
-  .order .metode {
-      width: 15rem;
-      background-color: var(--primary);
-      padding: 1rem;
-      float: right;
-      border-radius: 5px;
-      height: 3rem;
-      margin-right: 10px;
-  }
-
-  .order .metode h3 {
-      font-size: 1rem;
-      color: #000;
-      font-weight: 500;
-  }
-
-  .order .row {
-      display: flex;
-      justify-content: center;
-  }
-
-  .order .metodedua h3 {
-      font-size: 1rem;
-      color: #000;
-      font-weight: 500;
-  }
-
-  .order .metodedua {
-      height: 3rem;
-      width: 15rem;
-      background-color: #D9D9D9;
-      padding: 1rem;
-      border-radius: 5px;
-      margin-left: 10px;
-  }
-
-  /* order */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #28a745;
+    --putih: #fff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+}
+
+h6 {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+}
+
+h3 {
+    font-size: 1.3rem !important;
+    font-weight: 500;
+}
+
+/* navbar start */
+.navbar {
+    display: flex;
+}
+
+.bar {
+    margin-right: 2rem;
+    font-weight: 500;
+    color: #28a745;
+    transition: ease-in-out 0.3s;
+}
+
+.bar:hover {
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 0px 0px 7px 7px;
+    background-color: #28a745;
+}
+
+
+.masuk:hover {
+    background-color: var(--tua);
+    color: #fff;
+}
+
+.profile h3 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* navbar end */
+
+
+/* beranda start */
+.header {
+    background-color: var(--putih);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.header p {
+    font-size: 1rem;
+    color: #000;
+    margin-top: 3rem;
+    font-weight: 200;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 0px;
+}
+
+.header p span {
+    font-weight: 500;
+}
+
+.header h1 span {
+    font-size: 2.5rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.header img {
+    height: 300px;
+    float: right;
+    width: auto;
+}
+
+.beranda .menu .konten .box a {
+    font-size: 1rem;
+}
+
+.beranda .menu .konten .color {
+    color: #28a745 !important;
+}
+
+/* beranda end */
+
+/* order */
+.order .card-footer a {
+    color: #fff !important;
+}
+
+/* order */
+
+/* order */
+.container .flex {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container .scan {
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 15px;
+}
+
+.flex .card {
+    margin-top: 2rem;
+    background-color: #f1f1f1;
+    padding: 1rem;
+}
+
+.scan h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.scan a {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 500;
+    background-color: var(--primary);
+    padding: 5px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.scan a:hover {
+    background-color: var(--tua);
+}
+
+/* order */
+
+
+/* menu slide */
+.konten .box img {
+    height: 100px;
+    padding: 0;
+    margin-bottom: 10px;
+    border: 20px;
+    border-radius: 10px;
+}
+
+.konten a {
+    width: 92%;
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+.konten .box h4 {
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 0px;
+    font-weight: 700 !important;
+}
+
+.konten .box p {
+    padding-bottom: 0px !important;
+    font-size: 0.8rem;
+    font-weight: 300;
+    padding-top: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.konten .box span {
+    font-weight: 400;
+    color: #28a745;
+}
+
+
+.konten .garis {
+    margin-top: 2px;
+    background-color: #28a745;
+    width: 50px;
+    height: 1px;
+    cursor: pointer;
+}
+
+.konten .sec::-webkit-scrollbar {
+    height: 4px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.konten .sec::-webkit-scrollbar-thumb {
+    background-color: #28a745;
+    height: 1px;
+}
+
+.konten .sec {
+    overflow: auto;
+    scroll-behavior: smooth;
+    padding-left: 0px;
+    display: flex;
+}
+
+.konten .box {
+    margin: auto;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    padding: 15px;
+}
+
+.konten .box .link {
+    margin-right: -15px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 50% 0px 0px 50%;
+    padding: 7px 13px !important;
+    transition: ease-in-out 0.3s;
+}
+
+.konten .box .link:hover {
+    background-color: #176e2c;
+}
+
+/* menu slide */
+
+/* pesanan */
+.pesanan img {
+    height: 75px;
+}
+
+.pesanan td {
+    margin: 0;
+    height: 75px;
+    line-height: 75px;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0;
+}
+
+.pesanan td {
+    padding: 10px;
+}
+
+.pesanan span {
+    color: #28a745;
+    font-weight: 500;
+}
+
+/* pesanan */
+
+/* pilih menu */
+
+.pilihmenu input,
+.pilihmenu input::placeholder {
+    font-size: 0.8rem;
+}
+
+.pilihmenu label {
+    font-size: 0.8rem;
+    font-weight: 300 !important;
+    color: #000;
+}
+
+.pilihmenu form label img {
+    height: 1rem;
+}
+
+.pilihmenu p {
+    font-size: 1rem !important;
+    margin: 0;
+    font-weight: 300;
+}
+
+.pilihmenu .total p {
+    font-size: 1.1rem !important;
+}
+
+.pilihmenu .card img {
+    border-radius: 5px;
+}
+
+.pilihmenu .card-body {
+    padding: 0;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+
+.card-body .row .col p {
+    font-size: 0.8;
+    padding: 1rem 0rem;
+    font-weight: 300;
+    color: #4e4e4e;
+}
+
+/* pilih menu */
+
+/* tranksaksi */
+
+.tranksaksi .lef .col-12 h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 2rem;
+    margin-left: 0;
+}
+
+.tranksaksi .lef .col img {
+    height: auto;
+    width: 6rem;
+    margin-right: 0px;
+    border-radius: 5px;
+}
+
+.tranksaksi .menu img {
+    display: flex;
+}
+
+.tranksaksi .order {
+    background-color: #f8f8f8;
+    box-shadow: 1px rgb(7, 7, 7);
+    position: fixed;
+    right: 60px;
+    width: 30rem;
+    height: 100%;
+    padding: 1rem;
+    margin-top: -2.5rem;
+    border-radius: 0px;
+}
+
+.menu .konten a {
+    color: #fff !important;
+}
+
+.tranksaksi .order .head {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    color: #000;
+}
+
+.tranksaksi .makanan .menu h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.tranksaksi .makanan .lef p {
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin: 0px;
+}
+
+.tranksaksi .makanan span {
+    font-size: 0.8rem;
+    color: var(--tua);
+    margin: 0px;
+}
+
+
+.tranksaksi .order .no a {
+    background-color: #eaeaea;
+    color: #000;
+    transition: 0.3s;
+}
+
+.tranksaksi .order .no a:hover {
+    background-color: var(--tua);
+    color: #fff;
+}
+
+.tranksaksi .order .no a {
+    background-color: var(--tua);
+    padding: 5px 7px;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 400;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.tranksaksi .kanan {
+    float: right;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.tranksaksi .order p {
+    font-size: 0.8rem;
+    margin: 0;
+    color: #4e4e4e;
+    font-weight: 200;
+}
+
+.tranksaksi .lef h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    margin: 0;
+}
+
+.tranksaksi .lef .row {
+    width: 50rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 10px;
+    padding: 10px;
+    border-bottom: 3px solid #f8f8f8;
+    /* border-radius: 5px; */
+    margin-left: 1rem;
+}
+
+.tranksaksi .lef .col {
+    margin-left: -1rem;
+}
+
+.tranksaksi button {
+    background-color: #28a745;
+    margin-top: 100px;
+}
+
+.tranksaksi .col-3 h3 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.tranksaksi .order .pembayaran {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.tranksaksi .wrap {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.tranksaksi .pembayaran .col-12 {
+    display: flex;
+    justify-content: center;
+}
+
+.tranksaksi .kanan button:hover {
+    background-color: #28a745;
+}
+
+.tranksaksi .kanan button {
+    transition: 0.3s;
+    font-size: 0.7rem;
+    padding: 5px 5rem;
+    font-weight: 300;
+    color: #fff;
+    background-color: var(--tua);
+    border: 0;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.tranksaksi {
+    padding-top: 3rem;
+}
+
+.fa-arrow-left {
+    color: #000;
+    transition: 0.3s;
+    transform: 2s;
+    margin-right: 1rem;
+}
+
+.fa-arrow-left:hover {
+    transform: rotate(360deg);
+}
+
+.tranksaksi .order form input {
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #f8f8f8;
+    border-radius: 5px;
+    padding: 2px 10px;
+    font-size: 0.8rem;
+    margin-bottom: 0px;
+}
+
+.tranksaksi .order label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #4e4e4e;
+    margin-bottom: 0px;
+}
+
+/* tranksaksi */
+
+/* metode pembayaran */
+.metpem {
+    margin-top: 5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    width: 30rem;
+}
+
+.metpem h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.metpem .col-2 img {
+    height: 1rem;
+}
+
+.metpem .grup:hover {
+    background-color: #fff;
+    border-bottom: 1px solid transparent;
+    border-radius: 5px;
+
+}
+
+.metpem .gg {
+    background-color: #fff;
+}
+
+.metpem .grup {
+    margin-top: 0.5rem;
+    padding-top: 5px;
+    transition: 0.3s;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.metpem .col h4 {
+    height: 1.5rem;
+    color: #4e4e4e;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.metpem button {
+    background-color: var(--tua);
+    border: 0;
+    color: #fff;
+    padding: 5px 11.5rem;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.metpem button:hover {
+    background-color: #28a745;
+}
+
+.metpem .tombol {
+    display: flex;
+    justify-content: center;
+}
+
+.metpem .fa-coins {
+    color: var(--tua);
+    height: 1.7rem;
+    line-height: 1.7rem;
+}
+
+/* metode pembayaran */
+
+/* pembayaran */
+.tranksaksi .order .pilih img {
+    height: 1rem;
+}
+
+.tranksaksi .order .pilih p {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-left: 2rem;
+}
+
+.pilih .col-2 i {
+    color: var(--tua);
+}
+
+/* pembayaran */
+
+/* metpem */
+.form-check img {
+    height: 1.3rem;
+    margin: 0;
+}
+
+.metode {
+    padding: 2rem;
+    background-color: #fff;
+    width: 40rem;
+    margin: auto;
+}
+
+.metode h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.metode img {
+    width: 4rem;
+}
+
+.metode p {
+    font-size: 1rem;
+    color: #000;
+    width: 27.8rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.metode .fa-check {
+    float: right;
+    width: 1rem;
+    color: #e9e8e8;
+}
+
+.metode .link {
+    padding: 1rem;
+    padding-bottom: 0px;
+}
+
+.metode .link:hover {
+    background-color: #f8f8f8;
+    border-radius: 5px;
+}
+
+.metode button {
+    background-color: var(--tua);
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    padding: 2px 20px;
+    float: right;
+    font-size: 1rem;
+}
+
+.metode .col-12 .mt-3 {
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+/* metpem */
+
+/* bank */
+.bank .container {
+    width: 40rem;
+    padding: 40px;
+}
+
+.bank img {
+    height: 1.5rem;
+}
+
+.bank .card {
+    display: block;
+    align-items: center;
+}
+
+/* bank */
+
+/* selesai */
+.selesai i {
+    border: 5px solid #28a745;
+    padding: 20px;
+    font-size: 4rem;
+    margin: 3rem;
+}
+
+.selesai .card {
+    width: 500px;
+}
+
+.selesai .card-body {
+    padding: 2rem;
+}
+
+.selesai p {
+    font-weight: 300;
+
+    font-size: 1rem;
+}
+
+.selesai a {
+    font-weight: 600;
+}
+
+/* selesai */
+
+
+
+/* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+*/
+/* // Small devices (landscape phones, 576px and up) */
+@media screen and (max-width: 576px) {
+    nav .nav-item {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+
+    h3 {
+        font-size: 13px !important;
+    }
+
+    h2 {
+        font-size: 16px !important;
+    }
+
+    /* beranda */
+    .beranda .header img {
+        width: 150px !important;
+        height: auto;
+    }
+
+    .beranda .header a,
+    .beranda .header p {
+        margin: 5px;
+        font-size: 10px;
+    }
+
+
+    .beranda .header h1,
+    .beranda .header h2,
+    .beranda .header span {
+        font-size: 1rem;
+    }
+
+    .beranda .konten {
+        padding: 10px;
+    }
+
+    .beranda .jumbotron img {
+        width: 150px !important;
+    }
+
+    .beranda .jumbotron h2 {
+        font-size: 13px !important;
+    }
+
+    .beranda .jumbotron p {
+        font-size: 10px;
+        padding: 0 !important;
+    }
+
+    .beranda .jumbotron a {
+        font-size: 10px;
+    }
+
+    /* beranda */
+
+    /* boxmenu */
+    .sec .box {
+        width: 150px !important;
+        height: auto !important;
+        cursor: pointer;
+    }
+
+    .beranda .sec {
+        cursor: pointer !important;
+    }
+
+    .sec .box img {
+        width: 100% !important;
+    }
+
+    .sec .box h4 {
+        font-size: 13px !important;
+    }
+
+    .sec .box p {
+        width: 100px;
+        padding: 0;
+        font-size: 8px;
+        margin-bottom: 10px;
+    }
+
+    .sec .box a {
+        font-size: 10px;
+        padding: 0;
+    }
+
+    /* boxmenu */
+
+    /* menu */
+    .menu .kategori {
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu .kategori a {
+        font-size: 10px !important;
+        padding: 5px 24px !important;
+    }
+
+    /* menu */
+
+    /* order */
+    .order .struk {
+        position: fixed;
+        bottom: -15px;
+        top: 68%;
+        left: 0;
+        right: 0;
+    }
+
+    .order .struk h3 {
+        font-size: 16px !important;
+    }
+
+    .order .struk .card-body {
+        overflow: scroll;
+    }
+
+    .order .struk .card-footer .col-6 h4 {
+        padding: 5px 0 !important;
+    }
+
+    /* order */
+
+    /* metodepembayaran */
+    .pembayaran .data {
+        margin: 8px;
+    }
+
+    .pembayaran .sticky-top .pilihmenu .card {
+        position: relative !important;
+        margin-top: 10px !important;
+        width: 100%;
+        margin: 0px;
+    }
+
+    /* metodepembayaran */
+
+    /* pesanan */
+    .pesanan .container {
+        width: 100% !important;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pesanan img {
+        height: 30px;
+    }
+
+    .pesanan td {
+        margin: 0;
+        height: 30px;
+        line-height: 30px;
+        font-size: 10px;
+    }
+
+    .pesanan th {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .pesanan td {
+        padding: 3px;
+    }
+
+    .pesanan span {
+        color: #28a745;
+        font-weight: 500;
+    }
+
+    /* pesanan */
+}

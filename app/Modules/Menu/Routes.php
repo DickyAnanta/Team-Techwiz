@@ -6,4 +6,5 @@ $routes->group('menu', ['namespace' => 'App\Modules\Menu\Controllers'], function
     $routes->get('edit/(:any)', 'Menu::edit/$1');
     $routes->post('edit', 'Menu::edit');
     $routes->post('edit/(:any)', 'Menu::edit/$1');
+    $routes->get('v2', 'Menu::menu');
 });
