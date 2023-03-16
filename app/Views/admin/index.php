@@ -35,6 +35,11 @@ $method = $router->methodName();
         <?php include 'section/navbar.php'; ?>
         <!-- /.navbar -->
     </div>
+    <div class="loading-layout" style="background-color: #00000057;display: none;">
+        <div class="loading">
+            <img style="width:100px" src="/assets/system-images/app-loading.svg" width="80">
+        </div>
+    </div>
     <tbody>
         <div class="content-wrapper" style="padding-top: 1px;">
             <!-- Content Header (Page header) -->

@@ -1,4 +1,7 @@
 <div class="col">
+    <a title="Tambah" class="btn btn-link " href="<?= base_url() . "/" . strtolower($module) ?>">
+        <i class="fas fa-lg fa-home"></i>
+    </a>
     <h3><?= ($method == 'index') ? 'List' : ucfirst(str_replace('_', '', $method)); ?> <?= strtolower(str_replace('_', '', $module)); ?></h3>
 </div>
 <div class="col-auto">
@@ -10,7 +13,7 @@
     }
     ?>
     <button title="Simpan" class="btn btn-link <?= $disabled; ?>" id="menubar-save">
-        <i class="fas fa-2x fa-save"></i>
+        <i class="fas fa-lg fa-save"></i>
     </button>
     <?php
     $disabled_offset = [];
@@ -20,6 +23,6 @@
     }
     ?>
     <a title="Tambah" class="btn btn-link <?= $disabled; ?>" href="<?= base_url() . "/" . strtolower($module) . "/edit" ?>">
-        <i class="fas fa-2x fa-plus-circle"></i>
+        <i class="fas fa-lg fa-plus-circle"></i>
     </a>
 </div>

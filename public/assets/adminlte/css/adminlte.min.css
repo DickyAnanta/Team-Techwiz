@@ -3735,7 +3735,7 @@ fieldset:disabled a.btn {
 
 .btn-link {
     font-weight: 400;
-    color: #01ff80;
+    color: #003ab6;
     text-decoration: none
 }
 
@@ -12372,6 +12372,28 @@ a.text-dark:hover {
     --danger: #e74c3c;
     --light: #f8f9fa;
     --dark: #343a40
+}
+
+.loading-layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #f0f0f0;
+}
+
+.loading-layout .loading {
+    position: absolute;
+    left: 45%;
+    top: 40%;
+    font: 14px Fantasy;
+}
+
+.loading-layout .loading p {
+    font-weight: bold;
+    font: 14px Fantasy;
 }
 
 .animation__shake {

@@ -6,7 +6,7 @@
                     <h3>User Data</h3>
                     <div class="form-group">
                         <label for="username" class="col-form-label">Username</label>
-                        <input type="text" class="form-control form-control-border border-width-2" id="username" name="username" placeholder="Masukkan username tanpa sepasi dan tanpa karakter/simbol  " required>
+                        <input type="text" class="form-control form-control-border border-width-2" id="username" name="username" value="<?= @$data["username"]; ?>" placeholder="Masukkan username tanpa sepasi dan tanpa karakter/simbol  " required>
                     </div>
                     <div class="form-group">
                         <label for="password" class="col-form-label">Password</label>
@@ -14,30 +14,30 @@
                     </div>
                     <div class="form-group">
                         <label for="email" class="col-form-label">Email</label>
-                        <input type="email" class="form-control form-control-border border-width-2" id="email" name="email" placeholder="Masukkan email dengan benar" required>
+                        <input type="email" class="form-control form-control-border border-width-2" id="email" name="email" value="<?= @$data["email"]; ?>" placeholder="Masukkan email dengan benar" required>
                     </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-4">
                     <h3>Profile Data</h3>
                     <div class="form-group">
                         <label for="nama" class="col-form-label">Nama</label>
-                        <input type="text" class="form-control form-control-border border-width-2" id="nama" name="nama" placeholder="Masukkan nama lenkap. Contoh : Adul Acakadut" required>
+                        <input type="text" class="form-control form-control-border border-width-2" id="nama" name="nama" value="<?= @$data["nama"]; ?>" placeholder="Masukkan nama lenkap. Contoh : Adul Acakadut" required>
                     </div>
                     <div class="form-group">
                         <label for="kelamin" class="col-form-label">Kelamin</label>
-                        <input type="text" class="form-control form-control-border border-width-2" id="kelamin" name="kelamin" required>
+                        <input type="text" class="form-control form-control-border border-width-2" id="kelamin" name="kelamin" value="<?= @$data["kelamin"]; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="ttl" class="col-form-label">TTL</label>
-                        <input type="date" class="form-control form-control-border border-width-2" id="ttl" name="ttl" required>
+                        <input type="date" class="form-control form-control-border border-width-2" id="ttl" name="ttl" value="<?= @$data["tanggal_lahir"]; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="telepon" class="col-form-label">Telepon</label>
-                        <input type="number" maxlength="13" class="form-control form-control-border border-width-2" id="telepon" name="telepon" placeholder="62xxx xxxx xxxx" required>
+                        <input type="number" maxlength="13" class="form-control form-control-border border-width-2" id="telepon" name="telepon" value="<?= @$data["telepon"]; ?>" placeholder="62xxx xxxx xxxx" required>
                     </div>
                     <div class="form-group">
                         <label for="alamat" class="col-form-label">Alamat</label>
-                        <textarea type="text" class="form-control form-control-border border-width-2" id="alamat" name="alamat" placeholder="Masukkan alamat lengkap. Contoh : Bangsri RW001 RT002, Jepara, Jawa Tengah" rows="3" required></textarea>
+                        <textarea type="text" class="form-control form-control-border border-width-2" id="alamat" name="alamat" value="<?= @$data["alamat"]; ?>" placeholder="Masukkan alamat lengkap. Contoh : Bangsri RW001 RT002, Jepara, Jawa Tengah" rows="3" required><?= @$data["alamat"]; ?></textarea>
                     </div>
                 </div>
             </div>
