@@ -24,6 +24,10 @@
                         <label for="stok" class="col-form-label">Stok</label>
                         <input type="number" class="form-control form-control-border border-width-2" id="stok" name="stok" value="<?= @$data['stok'] ?>" placeholder="Masukkan stok dengan benar" required>
                     </div>
+                    <div class="form-group">
+                        <label for="harga" class="col-form-label">Harga</label>
+                        <input type="number" class="form-control form-control-border border-width-2" id="harga" name="harga" value="<?= @$data['harga'] ?>" placeholder="Masukkan stok dengan benar" required>
+                    </div>
                 </div>
             </div>
             <button type="submit" style="display:none" id="form-submit"></button>

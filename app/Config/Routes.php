@@ -12,7 +12,7 @@ $routes = Services::routes();
  */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('user');
-$routes->setDefaultMethod('index');
+$routes->setDefaultMethod('main');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
@@ -48,7 +48,7 @@ $routes->setAutoRoute(false);
 // Start loader route modules
 $router = service('router');
 $module = $router->controllerName();
-$routes->get('/', '\App\Modules\\' . $module . '\Controllers\\' . $module . '::index');
+$routes->get('/', '\App\Modules\\' . $module . '\Controllers\\' . $module . '::main');
 
 $dir =  scandir('../app/Modules/');
 foreach ($dir as $module) {

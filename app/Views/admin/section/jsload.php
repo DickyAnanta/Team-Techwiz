@@ -33,3 +33,9 @@
 <script type="text/javascript" src="/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script type="text/javascript" src="/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script type="text/javascript" src="/assets/js/table.cst.js"></script>
+
+<?php
+if (file_exists(str_replace("\\", "/", $rootDir) . "/App/Modules/" . $module . '/jsload.php')) {
+    include str_replace("\\", "/", $rootDir) . "/App/Modules/" . $module . '/jsload.php';
+}
+?>

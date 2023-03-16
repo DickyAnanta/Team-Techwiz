@@ -148,7 +148,6 @@ $(document).ready(function () {
             },
             success: function (res) {
                 localStorage.setItem(TABLE_SRCS, JSON.stringify(scheme));
-                console.log(JSON.stringify(scheme));
                 if (isJson(res)) {
                     var res = JSON.parse(res);
                     if (res.response) {

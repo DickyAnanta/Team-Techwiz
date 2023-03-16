@@ -160,7 +160,7 @@ class MenuModel extends Model
             }
 
             if (!empty($datas["order_by"]["column"])) {
-                $query = ' ORDER BY ' . $datas["order_by"]["column"] . ' ' . $datas["order_by"]["order"];
+                $query .= ' ORDER BY ' . $datas["order_by"]["column"] . ' ' . $datas["order_by"]["order"];
             }
 
             if (@$datas["getreturn"] == "data") {

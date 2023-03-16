@@ -1,0 +1,1 @@
+<link rel="stylesheet" href="/modules/<?= strtolower($module); ?>/css/view_img.css">

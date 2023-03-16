@@ -16,3 +16,14 @@ if (!function_exists('user_ag')) {
         return $ret;
     }
 }
+
+if (!function_exists('idr')) {
+    function idr($value = "")
+    {
+        $format = "-";
+        if (!empty($value)) {
+            $format = "Rp " . number_format($value, 2, ',', '.');
+        }
+        return $format;
+    }
+}

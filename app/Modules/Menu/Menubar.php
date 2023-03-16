@@ -1,4 +1,4 @@
-<div class="col">
+<div class="row col">
     <a title="Tambah" class="btn btn-link " href="<?= base_url() . "/" . strtolower($module) ?>">
         <i class="fas fa-lg fa-home"></i>
     </a>

@@ -1,0 +1,1 @@
+<script type="text/javascript" src="/modules/<?= strtolower($module); ?>/js/view_img.js"></script>
