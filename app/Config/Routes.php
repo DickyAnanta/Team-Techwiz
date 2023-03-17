@@ -11,7 +11,7 @@ $routes = Services::routes();
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('user');
+$routes->setDefaultController('beranda');
 $routes->setDefaultMethod('main');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();

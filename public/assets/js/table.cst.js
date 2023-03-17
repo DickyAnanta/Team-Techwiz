@@ -12,11 +12,11 @@ function initDataTable(disabledOrderCol, colNoWrap, colRight, colLeft, colCenter
     dataTableColCenter = colCenter;
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
     const STORAGE_QUERY = "WHERECLAUSE_" + jsURI[1].toUpperCase();
     const TABLE_SRCS = "TABLE_SRCS_" + jsURI[1].toUpperCase();
 
-    $('#tb-' + jsURI[1] + ' thead .th-src th').each(function () {
+    $('#tb-' + jsURI[1] + ' thead .th-src th').each(function() {
         var title = $(this).text();
         var type = $(this).data("type");
         if (type === undefined) {
@@ -48,13 +48,13 @@ $(document).ready(function () {
             format: 'YYYY/MM/DD HH:mm:ss'
         }
     });
-    $('.table-datetimerange').on('apply.daterangepicker', function (ev, picker) {
+    $('.table-datetimerange').on('apply.daterangepicker', function(ev, picker) {
         $(this).val(picker.startDate.format('YYYY/MM/DD HH:mm:ss') + ' - ' + picker.endDate.format('YYYY/MM/DD HH:mm:ss'));
         const buildWhereClause = buildTableWhereclause("table");
         refreshTable(buildWhereClause);
     });
 
-    $('.table-datetimerange').on('cancel.daterangepicker', function (ev, picker) {
+    $('.table-datetimerange').on('cancel.daterangepicker', function(ev, picker) {
         $(this).val('')
         picker.setStartDate({})
         picker.setEndDate({})
@@ -78,7 +78,7 @@ $(document).ready(function () {
     if (sessionScheme) {
         if (isJson(sessionScheme)) {
             let loop = 0;
-            $.each(sessionScheme = JSON.parse(sessionScheme), function (i) {
+            $.each(sessionScheme = JSON.parse(sessionScheme), function(i) {
                 if (i != "") {
                     $("#col-" + i).val(sessionScheme[i])
 
@@ -90,19 +90,21 @@ $(document).ready(function () {
             })
         }
     }
+
     if ($('#tb-' + jsURI[1]).html() != undefined) {
         refreshTable(sessionWhereclause);
     }
+
     if (lastCoolSearch) {
         $("input[name=" + lastCoolSearch + "]").select();
     }
 
-    $("#btn-allRecords").on("click", function () {
+    $("#btn-allRecords").on("click", function() {
         localStorage.removeItem(STORAGE_QUERY);
         localStorage.removeItem(TABLE_SRCS);
         if (jsURI[2] == "main") {
             refreshTable("");
-            $('.field-col-search').each(function () {
+            $('.field-col-search').each(function() {
                 $(this).val("");
             })
         } else {
@@ -116,7 +118,7 @@ $(document).ready(function () {
         if (source === "table") {
             var scheme = {};
             let loop = 0;
-            $('.field-col-search').each(function () {
+            $('.field-col-search').each(function() {
                 if ($(this).val()) {
                     scheme[$(this).attr("name")] = $(this).val();
                     ret[loop] = {
@@ -146,7 +148,7 @@ $(document).ready(function () {
                 search: ret,
                 row_status: jsURI[2] == "main_history" ? 2 : 1,
             },
-            success: function (res) {
+            success: function(res) {
                 localStorage.setItem(TABLE_SRCS, JSON.stringify(scheme));
                 if (isJson(res)) {
                     var res = JSON.parse(res);
@@ -182,32 +184,32 @@ $(document).ready(function () {
                     row_status: jsURI[2] == "main_history" ? 2 : 1,
                 }
             },
-            "fnDrawCallback": function (response) {
+            "fnDrawCallback": function(response) {
                 response = response.json;
                 localStorage.setItem(STORAGE_QUERY, whereclause);
 
                 loader.style.display = "none";
             },
             "columnDefs": [{
-                "targets": dataTableDisabledOrderCol,
-                "orderable": false
-            },
-            {
-                "targets": dataTableColNoWrap,
-                "className": 'colum-nowrap'
-            },
-            {
-                "targets": dataTableColRight,
-                "className": 'colum-right'
-            },
-            {
-                "targets": dataTableColLeft,
-                "className": 'colum-left'
-            },
-            {
-                "targets": dataTableColCenter,
-                "className": 'colum-center'
-            },
+                    "targets": dataTableDisabledOrderCol,
+                    "orderable": false
+                },
+                {
+                    "targets": dataTableColNoWrap,
+                    "className": 'colum-nowrap'
+                },
+                {
+                    "targets": dataTableColRight,
+                    "className": 'colum-right'
+                },
+                {
+                    "targets": dataTableColLeft,
+                    "className": 'colum-left'
+                },
+                {
+                    "targets": dataTableColCenter,
+                    "className": 'colum-center'
+                },
             ],
             // "order": []
         });
@@ -220,13 +222,13 @@ $(document).ready(function () {
     }
 
     function clearTableSearch() {
-        $('.field-col-search').each(function () {
+        $('.field-col-search').each(function() {
             $(this).val("");
         });
     }
 
     // Start button clear and referh table
-    $('#clear-filtering').on('click', function () {
+    $('#clear-filtering').on('click', function() {
         if (!$("#clear-filtering").hasClass("disabled")) {
             $('#clear-filtering').addClass('disabled');
             clearTableSearch();
@@ -236,7 +238,7 @@ $(document).ready(function () {
         }
     });
 
-    $(".field-col-search").keyup(function (event) {
+    $(".field-col-search").keyup(function(event) {
         if (event.keyCode === 13) {
             const buildWhereClause = buildTableWhereclause("table");
             refreshTable(buildWhereClause);
@@ -244,7 +246,7 @@ $(document).ready(function () {
         }
     })
 
-    $("#btn-table-search").on("click", function () {
+    $("#btn-table-search").on("click", function() {
         if ($("#clear-filtering").hasClass("disabled")) {
             $('#clear-filtering').removeClass('disabled');
         }
@@ -253,7 +255,7 @@ $(document).ready(function () {
         refreshTable(buildWhereClause);
     })
 
-    $("#excute-whereclauseuser").on('click', function () {
+    $("#excute-whereclauseuser").on('click', function() {
         const buildWhereClause = buildTableWhereclause("query");
         if (jsURI[2] != "main") {
             localStorage.setItem(STORAGE_QUERY, buildWhereClause);

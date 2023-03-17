@@ -6,7 +6,7 @@ use App\Modules\Beranda\Models\BerandaModel;
 
 class Beranda extends \App\Controllers\BaseController
 {
-    public function beranda()
+    public function main()
     {
         return view("public/index");
     }
