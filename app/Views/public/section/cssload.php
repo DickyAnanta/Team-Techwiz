@@ -2,7 +2,7 @@
 <!-- Font Awesome Icons -->
 <link rel="stylesheet" href="/assets/plugins/fontawesome-free/css/all.min.css">
 <!-- Theme style -->
-<link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
+<link rel="stylesheet" href="/assets/adminlte/css/adminlte.min.css">
 <!-- aos -->
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <!-- css saya -->

@@ -12,7 +12,6 @@
     });
 </script>
 <!-- AdminLTE App -->
-<script src="/assets/dist/js/adminlte.min.js"></script>
+<script src="/assets/adminlte/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="/dist/js/demo.js"></script>
 <script src="/script.js"></script>
