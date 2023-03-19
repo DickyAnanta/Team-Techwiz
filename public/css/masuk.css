@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #00FF80;
+    --m: #99D5BF;
+    --tua: #579981;
+    --muda: #C7E6C9;
+    --putih: #fff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f3f3;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #00FF80;
+    --m: #99D5BF;
+    --tua: #579981;
+    --muda: #C7E6C9;
+    --putih: #fff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f3f3;
+}
+
+.login-box i {
+    color: #000;
+}
+
+.login-box img {
+    display: block;
+    padding: auto;
+    margin: auto;
+    margin-bottom: 3.5rem;
+}
+
+.login-box .card {
+    width: 25rem;
+    padding: 0rem 1rem;
+    border-radius: 25px;
+    margin-left: -1rem;
+}
+
+.login-box ::placeholder {
+    padding: 1rem;
+}
+
+.login-box .card-body {
+    background-color: transparent;
+}
+
+.login-box input {
+    width: 20.4rem;
+    height: 2rem;
+    margin: 0;
+    margin-bottom: 0;
+    border-radius: 5px;
+    border: 2px solid #f3f3f3;
+    font-size: 0.8rem;
+}
+
+.login-box p {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.login-box .btn {
+    background-color: var(--primary);
+    padding: 4px 8.85rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 0.8rem;
+}
+
+.login-box button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-box .btn:hover {
+    background-color: var(--tua);
+    color: #fff;
+}

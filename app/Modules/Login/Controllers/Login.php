@@ -30,7 +30,7 @@ class Login extends \App\Controllers\BaseController
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/');
+                return redirect()->to('/user');
             } else {
                 $session->setFlashdata('msg', 'Password salah');
                 return redirect()->to('/login');

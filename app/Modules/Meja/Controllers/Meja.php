@@ -4,11 +4,16 @@ namespace App\Modules\Meja\Controllers;
 
 use App\Modules\Meja\Models\MejaModel;
 
+// include("/assets/plugins/phpqrcode/qrlib.php");
+use QRcode;
+
+
 class Meja extends \App\Controllers\BaseController
 {
     public function __construct()
     {
         $this->model = new MejaModel();
+        // $this->model1 = new qrlib();
     }
 
     var $table1 = "meja";
@@ -145,6 +150,35 @@ class Meja extends \App\Controllers\BaseController
         }
 
         echo json_encode($ret);
+    }
+
+    private function qr_code($id = '')
+    {
+        include(ROOTPATH . "public/assets/plugins/phpqrcode/qrlib.php");
+        $penyimpanan = str_replace("\\", "/", ROOTPATH);
+
+        if (!file_exists($penyimpanan)) {
+            mkdir($penyimpanan);
+        }
+
+        $isi = 'Siredig';
+
+        // perintah untuk membuat qrcode dan menyimpannya dalam folder temp
+        // atur level pemulihan datanya dengan QR_ECLEVEL_L | QR_ECLEVEL_M | QR_ECLEVEL_Q | QR_ECLEVEL_H
+        // atur pixel qrcode pada parameter ke 4
+        // atur jarak frame pada parameter ke 5
+        QRcode::png($isi, $penyimpanan . '', QR_ECLEVEL_L, 1, 5);
+
+
+        // menampilkan qrcode
+        // img src memanggil qr code
+        // $penyimpanan = folder penyimpanan
+        // nama file qr code
+        echo '<img src="' . $penyimpanan . '';
+        // $namabaru = 'meja-' . $id . '.' . 'png';
+        // dd(QRcode::png("abc", $penyimpanan . $namabaru, QR_ECLEVEL_L, 10, 5));
+
+        // return $namabaru;
     }
 
     public function edit($id = '')
