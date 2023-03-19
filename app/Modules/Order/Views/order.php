@@ -105,58 +105,8 @@
                 <div class="card-header">
                     <h3 class="text-center">Pesanan</h3>
                 </div>
-<<<<<<< Updated upstream
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-7">
-                            <p class="float-left p-0 m-1">Burger Special <span class="text-success">RP25.000</span></p>
-                        </div>
-                        <div class="col-1">
-                            <a href="" class="btn btn-sm text-success">+</a>
-                        </div>
-                        <div class="col-1">
-                            <label for="" class="float-right pt-1">1</label>
-                        </div>
-                        <div class="col-1">
-                            <a href="" class="btn btn-sm text-danger">-</a>
-                        </div>
-                        <div class="col-2">
-                            <a href="" class="btn btn-sm btn-danger float-right"><i class="fa fa-trash" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <div class="col-12">
-                            <div class="input-group p-0 m-0 ">
-                                <input type="text" class="form-control mb-3" aria-label="Amount (to the nearest dollar)" placeholder="Masukkan Catatan">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-7">
-                            <p class="float-left p-0 m-1">Burger Special <span class="text-success">RP25.000</span></p>
-                        </div>
-                        <div class="col-1">
-                            <a href="" class="btn btn-sm text-success">+</a>
-                        </div>
-                        <div class="col-1">
-                            <label for="" class="float-right pt-1">1</label>
-                        </div>
-                        <div class="col-1">
-                            <a href="" class="btn btn-sm text-danger">-</a>
-                        </div>
-                        <div class="col-2">
-                            <a href="" class="btn btn-sm btn-danger float-right"><i class="fa fa-trash" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <div class="col-12">
-                            <div class="input-group p-0 m-0 ">
-                                <input type="text" class="form-control mb-3" aria-label="Amount (to the nearest dollar)" placeholder="Masukkan Catatan">
-                            </div>
-                        </div>
-                    </div>
-=======
                 <div class="card-body" id="detailed-order-list">
 
->>>>>>> Stashed changes
                 </div>
 
                 <div class="card-footer bg-white border-top text-muted">
@@ -168,11 +118,7 @@
                             <h4 class="float-right" id="total-all-order">Rp 0,00</h4>
                         </div>
                     </div>
-<<<<<<< Updated upstream
-                    <a href="" data-toggle="modal" data-target="#metodepembayaran" class="btn btn-success w-100">Lanjutkan Pesanan</a>
-=======
                     <button href="/order/metodepembayaran" class="btn btn-success w-100" id="lanjut-order1">Lanjutkan Pesanan</button>
->>>>>>> Stashed changes
                 </div>
             </div>
         </div>
