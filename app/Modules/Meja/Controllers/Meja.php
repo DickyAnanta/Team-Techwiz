@@ -3,9 +3,14 @@
 namespace App\Modules\Meja\Controllers;
 
 use App\Modules\Meja\Models\MejaModel;
-
-// include("/assets/plugins/phpqrcode/qrlib.php");
-use QRcode;
+use Endroid\QrCode\Color\Color;
+use Endroid\QrCode\Encoding\Encoding;
+use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow;
+use Endroid\QrCode\QrCode;
+use Endroid\QrCode\Label\Label;
+use Endroid\QrCode\Logo\Logo;
+use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
+use Endroid\QrCode\Writer\PngWriter;
 
 
 class Meja extends \App\Controllers\BaseController
@@ -13,6 +18,7 @@ class Meja extends \App\Controllers\BaseController
     public function __construct()
     {
         $this->model = new MejaModel();
+        $this->model1 = new PngWriter();
         // $this->model1 = new qrlib();
     }
 
@@ -26,6 +32,7 @@ class Meja extends \App\Controllers\BaseController
 
     public function main()
     {
+        // $tes = $this->qr_code();
         return view('admin/index');
     }
 
@@ -154,31 +161,21 @@ class Meja extends \App\Controllers\BaseController
 
     private function qr_code($id = '')
     {
-        include(ROOTPATH . "public/assets/plugins/phpqrcode/qrlib.php");
-        $penyimpanan = str_replace("\\", "/", ROOTPATH);
+        $dt_post = $this->request->getPost('nomor');
+        $writer = $this->model1;
+        // Create QR code
+        $qrCode = QrCode::create('meja ' . $dt_post)
+            ->setEncoding(new Encoding('UTF-8'))
+            ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
+            ->setSize(300)
+            ->setMargin(10)
+            ->setRoundBlockSizeMode(new RoundBlockSizeModeMargin())
+            ->setForegroundColor(new Color(0, 0, 0))
+            ->setBackgroundColor(new Color(255, 255, 255));
 
-        if (!file_exists($penyimpanan)) {
-            mkdir($penyimpanan);
-        }
-
-        $isi = 'Siredig';
-
-        // perintah untuk membuat qrcode dan menyimpannya dalam folder temp
-        // atur level pemulihan datanya dengan QR_ECLEVEL_L | QR_ECLEVEL_M | QR_ECLEVEL_Q | QR_ECLEVEL_H
-        // atur pixel qrcode pada parameter ke 4
-        // atur jarak frame pada parameter ke 5
-        QRcode::png($isi, $penyimpanan . '', QR_ECLEVEL_L, 1, 5);
-
-
-        // menampilkan qrcode
-        // img src memanggil qr code
-        // $penyimpanan = folder penyimpanan
-        // nama file qr code
-        echo '<img src="' . $penyimpanan . '';
-        // $namabaru = 'meja-' . $id . '.' . 'png';
-        // dd(QRcode::png("abc", $penyimpanan . $namabaru, QR_ECLEVEL_L, 10, 5));
-
-        // return $namabaru;
+        $result = $writer->write($qrCode);
+        $result->saveToFile(FCPATH . '/assets/upload/images/' . 'meja-' . $dt_post . '.png');
+        return $result;
     }
 
     public function edit($id = '')
@@ -204,6 +201,7 @@ class Meja extends \App\Controllers\BaseController
                         "status" => "Available",
                         "created_by" => ""
                     ];
+
                     $sv_data = @$this->model->meja(0, $dt_menu_pre_post, "post");
                     if ($sv_data['response']) {
                         $ret['alert'] = [
