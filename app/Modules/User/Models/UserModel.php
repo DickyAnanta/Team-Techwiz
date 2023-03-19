@@ -30,19 +30,23 @@ class UserModel extends Model
         return $ret;
     }
 
-    public function detailed($id)
+    public function detailed($id = 0, $whereclause = "")
     {
         $ret = false;
-        if (!empty($id)) {
+        if (!empty($id) || !empty($whereclause)) {
             $query = "SELECT * FROM " . $this->tableuser;
             $query .= " INNER JOIN profile ON profile.user_id = user.id";
-            $query .= " WHERE user.id = " . decrypt_url($id);
+            if (!empty($whereclause)) {
+                $query .= " WHERE " . $whereclause;
+            } else {
+                $query .= " WHERE user.id = " . decrypt_url($id);
+            }
             $data = $this->db->query($query)->getRowArray();
             if (!empty($data)) {
                 $ret = $data;
             }
-            return $ret;
         }
+        return $ret;
     }
 
     public function user($id = 0, $datas = "", $type = "")

@@ -18,7 +18,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="/beranda" class="masuk ml-5">Keluar</a>
+                    <a class="bar ml-5" href="/login/logout"><i class="fas fa-sign-out-alt"></i> Keluar</a>
                 </li>
             </ul>
         </ul>
