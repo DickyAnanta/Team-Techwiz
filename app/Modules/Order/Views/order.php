@@ -160,35 +160,55 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-6">
-                            <p class="float-left p-0">Burger Special <span class="text-success">RP25.000</span></p>
+                        <div class="col-7">
+                            <p class="float-left p-0 m-1">Burger Special <span class="text-success">RP25.000</span></p>
                         </div>
-                        <div class="col-6">
+                        <div class="col-1">
+                            <a href="" class="btn btn-sm text-success">+</a>
+                        </div>
+                        <div class="col-1">
+                            <label for="" class="float-right pt-1">1</label>
+                        </div>
+                        <div class="col-1">
+                            <a href="" class="btn btn-sm text-danger">-</a>
+                        </div>
+                        <div class="col-2">
                             <a href="" class="btn btn-sm btn-danger float-right"><i class="fa fa-trash" aria-hidden="true"></i>
                             </a>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-group p-0 m-0 ">
+                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Masukkan Catatan">
+                            </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6">
-                            <p class="float-left p-0">Burger Special <span class="text-success">RP25.000</span></p>
+                        <div class="col-7">
+                            <p class="float-left p-0 m-1">Burger Special <span class="text-success">RP25.000</span></p>
                         </div>
-                        <div class="col-6">
+                        <div class="col-1">
+                            <a href="" class="btn btn-sm text-success">+</a>
+                        </div>
+                        <div class="col-1">
+                            <label for="" class="float-right pt-1">1</label>
+                        </div>
+                        <div class="col-1">
+                            <a href="" class="btn btn-sm text-danger">-</a>
+                        </div>
+                        <div class="col-2">
                             <a href="" class="btn btn-sm btn-danger float-right"><i class="fa fa-trash" aria-hidden="true"></i>
                             </a>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <p class="float-left p-0">Burger Special <span class="text-success">RP25.000</span></p>
-                        </div>
-                        <div class="col-6">
-                            <a href="" class="btn btn-sm btn-danger float-right"><i class="fa fa-trash" aria-hidden="true"></i>
-                            </a>
+                        <div class="col-12">
+                            <div class="input-group p-0 m-0 ">
+                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Masukkan Catatan">
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="card-footer bg-white border-top text-muted">
-                    <div class="row">
+                    <div class="row pt-2">
                         <div class="col-6">
                             <h4 class="float-left p-0">Total Pembayaran</h4>
                         </div>

@@ -736,11 +736,71 @@ h3 {
 
 /* selesai */
 
+/* produk */
+.beranda #produk .modal-body img {
+    height: 10rem;
+    display: flex;
+    margin-top: 20%;
+    justify-content: center;
+}
+
+.beranda #produk .modal-body label,
+.beranda #produk .modal-body h3 {
+    font-size: 1rem;
+}
+
+.beranda #produk .modal-body .col-6 {
+    padding-left: 2rem;
+}
+
+.beranda #produk .modal-body p {
+    font-size: 0.8rem;
+}
+
+/* produk */
 
 
-/* // X-Small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
-*/
+/* scan */
+#reader {
+    width: 600px;
+    background-color: #f8f9fA;
+    border: none !important;
+    padding: 2rem !important;
+    border-radius: 10px;
+}
+
+#reader button {
+    border: 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    font-weight: 600;
+}
+
+#reader a {
+    font-size: 0.5rem !important;
+}
+
+#reader button:hover {
+    background-color: #176e2c;
+}
+
+
+#result {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* scan */
+
+
 /* // Small devices (landscape phones, 576px and up) */
 @media screen and (max-width: 576px) {
     nav .nav-item {
@@ -779,6 +839,14 @@ h3 {
         padding: 10px;
     }
 
+    .beranda .konten .link {
+        padding: 1px 7px !important;
+    }
+
+    .beranda .konten .box p {
+        margin-bottom: 0 !important;
+    }
+
     .beranda .jumbotron img {
         width: 150px !important;
     }
@@ -800,8 +868,8 @@ h3 {
 
     /* boxmenu */
     .sec .box {
-        width: 150px !important;
-        height: auto !important;
+        width: 100% !important;
+        height: 170px !important;
         cursor: pointer;
     }
 
@@ -811,22 +879,27 @@ h3 {
 
     .sec .box img {
         width: 100% !important;
+        height: auto !important;
     }
 
     .sec .box h4 {
-        font-size: 13px !important;
+        font-size: 11px !important;
     }
 
     .sec .box p {
         width: 100px;
         padding: 0;
-        font-size: 8px;
-        margin-bottom: 10px;
+        font-size: 10px;
+        margin: 0;
     }
 
     .sec .box a {
         font-size: 10px;
         padding: 0;
+    }
+
+    .sec {
+        color: transparent;
     }
 
     /* boxmenu */
@@ -914,4 +987,53 @@ h3 {
     }
 
     /* pesanan */
+    /* bank */
+    .bank .container {
+        width: 90%;
+        padding: 1.3rem;
+    }
+
+    .bank label,
+    .bank span {
+        font-size: 0.8rem;
+        height: 2rem;
+    }
+
+    .bank input {
+        height: 0.8rem !important;
+    }
+
+    .bank .card h3 {
+        font-size: 0.8rem !important;
+    }
+
+    .bank .row {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .bank .bawah {
+        margin-top: 1rem;
+    }
+
+    .bank .atas {
+        margin-bottom: 1rem;
+    }
+
+    .bank .card img {
+        height: 1rem;
+    }
+
+    /* bank */
+
+    /* selesai */
+    .selesai .card {
+        width: 90%;
+    }
+
+    .selesai p {
+        font-size: 0.8rem;
+    }
+
+    /* selesai */
 }
