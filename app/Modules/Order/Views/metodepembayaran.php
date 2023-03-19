@@ -1,4 +1,4 @@
-<section class="metodepembayaran mb-5">
+<section class="metodepembayaran mt-5 mb-5">
     <div class="row">
         <!-- kolom1 -->
         <div class="col-md-7 border rounded p-3 pilihmenu data">
@@ -8,8 +8,6 @@
                 <input class="form-control" type="text" placeholder="Masukkan Nama">
                 <label class="mb-1 mt-2">No Telepon</label> <br>
                 <input class="form-control" type="number" placeholder="Masukkan No Telp">
-                <label class="mb-1 mt-2">Catatan</label> <br>
-                <input class="form-control" type="text" placeholder="Masukkan Catatan">
 
                 <h3 class="mt-3 mb-2">Metode Pembayaran</h3>
                 <label class="w-100 border p-2 rounded" for="">
@@ -17,16 +15,8 @@
                     Bayar Di Tempat
                 </label>
                 <label class="w-100 border p-2 rounded" for="">
-                    <input class="mr-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                    <img src="../img/bri.png" alt="">
-                </label>
-                <label class="w-100 border p-2 rounded" for="">
-                    <input class="mr-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                    <img src="../img/bni.png" alt="">
-                </label>
-                <label class="w-100 border p-2 rounded" for="">
-                    <input class="mr-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                    <img src="../img/bca.png" alt="">
+                    <input class="mr-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    Transfer Bank
                 </label>
         </div>
         </form>
