@@ -6,10 +6,54 @@
             <h2>&EAT FOOD</h2>
             <p><span>Eat good, live good, and eat good.</span><br>
                 Nek mangan gausah miker<br> dunyo, marai ga nikmat.</p>
-            <a href="menu.php" class="btn btn-sm bg-success shadow">Menu</a>
+            <a href="" data-toggle="modal" data-target="#modal-qr-camera" class="btn btn-sm bg-success shadow">Scan To Order</a>
         </div>
         <div class="col" data-aos="fade-up" data-aos-delay="300">
             <img src="/assets/img/Group 100.png" alt="">
+        </div>
+    </div>
+
+    <!-- modal -->
+    <div class="modal" id="modal-qr-camera" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Scan To Order</h5>
+                    <button type="button" id="tombol" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <main>
+                        <div id="reader"></div>
+                        <div id="result"></div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- detail produk -->
+    <div class="modal" tabindex="-1" id="produk">
+        <div class="modal-dialog">
+            <div class="modal-content bg-light rounded">
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-1">
+                            <a href="index.php"><i class="fa fa-arrow-left bg-white p-2 font-weight-bold rounded-circle" aria-hidden="true"></i></a><br>
+                        </div>
+                        <div class="col-5">
+                            <img src="" alt="" class="mr-3">
+                        </div>
+                        <div class="col-6">
+                            <h3>Burger Special</h3>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore architecto nemo voluptatibus. Neque cum adipisci laboriosam distinctio fuga, iste fugiat!</p>
+                            <label for="">RP 30.000 </label><br>
+                            <a href="" class="btn btn-sm btn-success float-right">Order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -22,33 +66,33 @@
                 <div class="sec">
                     <div class="box border border-light text-left bg-light" data-aos="flip-left">
                         <img src="/assets/upload/images/Paket1.png" alt="">
-                        <h4>Paket 1</h4><span class="float-right link p-0 border"><a href="user/detailmenu.php" class="btn"><i class="fas fa-pizza-slice text-white"></a></i></span>
+                        <h4>Paket 1</h4><span class="float-right link p-0 border"><a href="" data-toggle="modal" data-target="#produk" class="btn"><i class="fas fa-pizza-slice text-white"></a></i></span>
                         <p class="d-flex justify-content-between mb-2">Paket</p>
-                        <a class="font-weight-bold color" href="user/order.php">RP30.000</a>
+                        <a class="font-weight-bold color" href="" data-toggle="modal" data-target="#produk">RP30.000</a>
                     </div>
                     <div class="box border border-light text-left bg-light" data-aos="flip-left">
                         <img src="/assets/upload/images/Paket1.png" alt="">
-                        <h4>Paket 1</h4><span class="float-right link p-0 border"><a href="user/detailmenu.php" class="btn"><i class="fas fa-pizza-slice text-white"></a></i></span>
+                        <h4>Paket 1</h4><span class="float-right link p-0 border"><a href="" data-toggle="modal" data-target="#produk" class="btn"><i class="fas fa-pizza-slice text-white"></a></i></span>
                         <p class="d-flex justify-content-between mb-2">Paket</p>
-                        <a class="font-weight-bold color" href="user/order.php">RP30.000</a>
+                        <a class="font-weight-bold color" href="" data-toggle="modal" data-target="#produk">RP30.000</a>
                     </div>
                     <div class="box border border-light text-left bg-light" data-aos="flip-left">
                         <img src="/assets/upload/images/Paket1.png" alt="">
-                        <h4>Paket 1</h4><span class="float-right link p-0 border"><a href="user/detailmenu.php" class="btn"><i class="fas fa-pizza-slice text-white"></a></i></span>
+                        <h4>Paket 1</h4><span class="float-right link p-0 border"><a href="" data-toggle="modal" data-target="#produk" class="btn"><i class="fas fa-pizza-slice text-white"></a></i></span>
                         <p class="d-flex justify-content-between mb-2">Paket</p>
-                        <a class="font-weight-bold color" href="user/order.php">RP30.000</a>
+                        <a class="font-weight-bold color" href="" data-toggle="modal" data-target="#produk">RP30.000</a>
                     </div>
                     <div class="box border border-light text-left bg-light" data-aos="flip-left" data-aos-delay="100">
                         <img src="/assets/upload/images/Paket2.png" alt="">
-                        <h4>Paket 2</h4><span class="float-right link p-0 border"><a href="user/detailmenu.php" class="btn"><i class="fas fa-pizza-slice text-white"></a></i></span>
+                        <h4>Paket 2</h4><span class="float-right link p-0 border"><a href="" data-toggle="modal" data-target="#produk" class="btn"><i class="fas fa-pizza-slice text-white"></a></i></span>
                         <p class="d-flex justify-content-between mb-2">Paket</p>
-                        <a class="font-weight-bold color" href="user/order.php">RP30.000</a>
+                        <a class="font-weight-bold color" href="" data-toggle="modal" data-target="#produk">RP30.000</a>
                     </div>
                     <div class="box border border-light text-left bg-light" data-aos="flip-left" data-aos-delay="200">
                         <img src="/assets/upload/images/paket3.png" alt="">
-                        <h4>Paket 3</h4><span class="float-right link p-0 border"><a href="user/detailmenu.php" class="btn"><i class="fas fa-pizza-slice text-white"></a></i></span>
+                        <h4>Paket 3</h4><span class="float-right link p-0 border"><a href="" data-toggle="modal" data-target="#produk" class="btn"><i class="fas fa-pizza-slice text-white"></a></i></span>
                         <p class="d-flex justify-content-between mb-2">Paket</p>
-                        <a class="font-weight-bold color" href="user/order.php">RP30.000</a>
+                        <a class="font-weight-bold color" href="" data-toggle="modal" data-target="#produk">RP30.000</a>
                     </div>
                 </div>
             </div>

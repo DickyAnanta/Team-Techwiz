@@ -13,5 +13,6 @@
 </script>
 <!-- AdminLTE App -->
 <script src="/assets/adminlte/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="/script.js"></script>
+<!-- scan qr -->
+<script src="../assets/js/html5-qrcode.min.js"></script>
+<script src="../assets/js/scansaya.js"></script>
