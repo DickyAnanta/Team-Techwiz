@@ -1,3 +1,4 @@
+<script src="/assets/declar.js"></script>
 <!-- tilt -->
 <script type="text/javascript" src="vanilla-tilt.min.js"></script>
 <!-- jQuery -->
@@ -16,3 +17,9 @@
 <!-- scan qr -->
 <script src="../assets/js/html5-qrcode.min.js"></script>
 <script src="../assets/js/scansaya.js"></script>
+
+<?php
+if (file_exists(str_replace("\\", "/", $rootDir) . "/App/Modules/" . $module . '/jsload.php')) {
+    include str_replace("\\", "/", $rootDir) . "/App/Modules/" . $module . '/jsload.php';
+}
+?>

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-
 :root {
     --primary: #28a745;
     --putih: #fff;
@@ -31,7 +30,9 @@ h3 {
     font-weight: 500;
 }
 
+
 /* navbar start */
+
 .navbar {
     display: flex;
 }
@@ -50,7 +51,6 @@ h3 {
     background-color: #28a745;
 }
 
-
 .masuk:hover {
     background-color: var(--tua);
     color: #fff;
@@ -61,10 +61,12 @@ h3 {
     font-weight: 500;
 }
 
+
 /* navbar end */
 
 
 /* beranda start */
+
 .header {
     background-color: var(--putih);
 }
@@ -114,16 +116,22 @@ h3 {
     color: #28a745 !important;
 }
 
+
 /* beranda end */
 
+
 /* order */
+
 .order .card-footer a {
     color: #fff !important;
 }
 
-/* order */
 
 /* order */
+
+
+/* order */
+
 .container .flex {
     height: 100%;
     display: flex;
@@ -165,10 +173,12 @@ h3 {
     background-color: var(--tua);
 }
 
+
 /* order */
 
 
 /* menu slide */
+
 .konten .box img {
     height: 100px;
     padding: 0;
@@ -204,7 +214,6 @@ h3 {
     color: #28a745;
 }
 
-
 .konten .garis {
     margin-top: 2px;
     background-color: #28a745;
@@ -235,6 +244,8 @@ h3 {
     margin: auto;
     border-radius: 20px;
     width: auto;
+    min-width: 130px;
+    max-width: 130px;
     height: auto;
     text-align: center;
     margin-right: 20px;
@@ -256,9 +267,12 @@ h3 {
     background-color: #176e2c;
 }
 
+
 /* menu slide */
 
+
 /* pesanan */
+
 .pesanan img {
     height: 75px;
 }
@@ -281,7 +295,9 @@ h3 {
     font-weight: 500;
 }
 
+
 /* pesanan */
+
 
 /* pilih menu */
 
@@ -320,7 +336,6 @@ h3 {
     padding-bottom: 20px;
 }
 
-
 .card-body .row .col p {
     font-size: 0.8;
     padding: 1rem 0rem;
@@ -328,7 +343,9 @@ h3 {
     color: #4e4e4e;
 }
 
+
 /* pilih menu */
+
 
 /* tranksaksi */
 
@@ -394,7 +411,6 @@ h3 {
     color: var(--tua);
     margin: 0px;
 }
-
 
 .tranksaksi .order .no a {
     background-color: #eaeaea;
@@ -530,9 +546,12 @@ h3 {
     margin-bottom: 0px;
 }
 
+
 /* tranksaksi */
 
+
 /* metode pembayaran */
+
 .metpem {
     margin-top: 5rem;
     padding: 1rem;
@@ -556,7 +575,6 @@ h3 {
     background-color: #fff;
     border-bottom: 1px solid transparent;
     border-radius: 5px;
-
 }
 
 .metpem .gg {
@@ -605,9 +623,12 @@ h3 {
     line-height: 1.7rem;
 }
 
+
 /* metode pembayaran */
 
+
 /* pembayaran */
+
 .tranksaksi .order .pilih img {
     height: 1rem;
 }
@@ -624,9 +645,12 @@ h3 {
     color: var(--tua);
 }
 
+
 /* pembayaran */
 
+
 /* metpem */
+
 .form-check img {
     height: 1.3rem;
     margin: 0;
@@ -689,9 +713,12 @@ h3 {
     justify-content: center;
 }
 
+
 /* metpem */
 
+
 /* bank */
+
 .bank .container {
     width: 40rem;
     padding: 40px;
@@ -706,9 +733,12 @@ h3 {
     align-items: center;
 }
 
+
 /* bank */
 
+
 /* selesai */
+
 .selesai i {
     border: 5px solid #28a745;
     padding: 20px;
@@ -726,7 +756,6 @@ h3 {
 
 .selesai p {
     font-weight: 300;
-
     font-size: 1rem;
 }
 
@@ -734,9 +763,12 @@ h3 {
     font-weight: 600;
 }
 
+
 /* selesai */
 
+
 /* produk */
+
 .beranda #produk .modal-body img {
     height: 10rem;
     display: flex;
@@ -757,10 +789,12 @@ h3 {
     font-size: 0.8rem;
 }
 
+
 /* produk */
 
 
 /* scan */
+
 #reader {
     width: 600px;
     background-color: #f8f9fA;
@@ -786,7 +820,6 @@ h3 {
     background-color: #176e2c;
 }
 
-
 #result {
     text-align: center;
     font-size: 1.5rem;
@@ -798,125 +831,101 @@ main {
     align-items: center;
 }
 
+
 /* scan */
 
 
 /* // Small devices (landscape phones, 576px and up) */
+
 @media screen and (max-width: 576px) {
     nav .nav-item {
         padding: 1rem;
         font-size: 0.8rem;
     }
-
     h3 {
         font-size: 13px !important;
     }
-
     h2 {
         font-size: 16px !important;
     }
-
     /* beranda */
     .beranda .header img {
         width: 150px !important;
         height: auto;
     }
-
     .beranda .header a,
     .beranda .header p {
         margin: 5px;
         font-size: 10px;
     }
-
-
     .beranda .header h1,
     .beranda .header h2,
     .beranda .header span {
         font-size: 1rem;
     }
-
     .beranda .konten {
         padding: 10px;
     }
-
     .beranda .konten .link {
         padding: 1px 7px !important;
     }
-
     .beranda .konten .box p {
         margin-bottom: 0 !important;
     }
-
     .beranda .jumbotron img {
         width: 150px !important;
     }
-
     .beranda .jumbotron h2 {
         font-size: 13px !important;
     }
-
     .beranda .jumbotron p {
         font-size: 10px;
         padding: 0 !important;
     }
-
     .beranda .jumbotron a {
         font-size: 10px;
     }
-
     /* beranda */
-
     /* boxmenu */
     .sec .box {
         width: 100% !important;
         height: 170px !important;
         cursor: pointer;
     }
-
     .beranda .sec {
         cursor: pointer !important;
     }
-
     .sec .box img {
         width: 100% !important;
         height: auto !important;
     }
-
     .sec .box h4 {
         font-size: 11px !important;
     }
-
     .sec .box p {
         width: 100px;
         padding: 0;
         font-size: 10px;
         margin: 0;
     }
-
     .sec .box a {
         font-size: 10px;
         padding: 0;
     }
-
     .sec {
         color: transparent;
     }
-
     /* boxmenu */
-
     /* menu */
     .menu .kategori {
         display: flex;
         justify-content: center;
     }
-
     .menu .kategori a {
         font-size: 10px !important;
         padding: 5px 24px !important;
     }
-
     /* menu */
-
     /* order */
     .order .struk {
         position: fixed;
@@ -925,115 +934,90 @@ main {
         left: 0;
         right: 0;
     }
-
     .order .struk h3 {
         font-size: 16px !important;
     }
-
     .order .struk .card-body {
         overflow: scroll;
     }
-
     .order .struk .card-footer .col-6 h4 {
         padding: 5px 0 !important;
     }
-
     /* order */
-
     /* metodepembayaran */
     .pembayaran .data {
         margin: 8px;
     }
-
     .pembayaran .sticky-top .pilihmenu .card {
         position: relative !important;
         margin-top: 10px !important;
         width: 100%;
         margin: 0px;
     }
-
     /* metodepembayaran */
-
     /* pesanan */
     .pesanan .container {
         width: 100% !important;
         padding: 0;
         margin: 0;
     }
-
     .pesanan img {
         height: 30px;
     }
-
     .pesanan td {
         margin: 0;
         height: 30px;
         line-height: 30px;
         font-size: 10px;
     }
-
     .pesanan th {
         padding: 5px;
         font-size: 12px;
     }
-
     .pesanan td {
         padding: 3px;
     }
-
     .pesanan span {
         color: #28a745;
         font-weight: 500;
     }
-
     /* pesanan */
     /* bank */
     .bank .container {
         width: 90%;
         padding: 1.3rem;
     }
-
     .bank label,
     .bank span {
         font-size: 0.8rem;
         height: 2rem;
     }
-
     .bank input {
         height: 0.8rem !important;
     }
-
     .bank .card h3 {
         font-size: 0.8rem !important;
     }
-
     .bank .row {
         margin: 0 !important;
         padding: 0 !important;
     }
-
     .bank .bawah {
         margin-top: 1rem;
     }
-
     .bank .atas {
         margin-bottom: 1rem;
     }
-
     .bank .card img {
         height: 1rem;
     }
-
     /* bank */
-
     /* selesai */
     .selesai .card {
         width: 90%;
     }
-
     .selesai p {
         font-size: 0.8rem;
     }
-
     /* selesai */
 }

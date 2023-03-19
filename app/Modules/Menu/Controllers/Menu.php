@@ -44,6 +44,19 @@ class Menu extends \App\Controllers\BaseController
     return view('admin/index');
   }
 
+  public function detailed_menu()
+  {
+    $ret = "";
+    $data = @$this->request->getGet();
+    if (!empty($data["id"])) {
+      $detailed = $this->model->detailed($data["id"]);
+      if (!empty($detailed)) {
+        $ret = $detailed;
+      }
+    }
+    echo json_encode($ret);
+  }
+
   public function table_main()
   {
     $getdata = @$this->request->getGet();
@@ -293,10 +306,5 @@ class Menu extends \App\Controllers\BaseController
     }
 
     return view('admin/index', $ret);
-  }
-
-  public function menu()
-  {
-    return view("public/index");
   }
 }
