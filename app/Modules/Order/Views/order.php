@@ -2,35 +2,65 @@
     <h2 data-aos="fade-down">Pilih Produk</h2>
 
     <!-- modal metpem -->
-    <div class="modal" tabindex="-1" id="metodepembayaran">
+    <div class="modal" tabindex="-1" id="metode-pembayaran">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Metode Pembayaran</h5>
+                    <h5 class="modal-title">Detail Pemayaran</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
-                        <label class="mb-1 mt-2">Nama</label> <br>
-                        <input class="form-control" type="text" placeholder="Masukkan Nama">
-                        <label class="mb-1 mt-2">No Telepon</label> <br>
-                        <input class="form-control" type="number" placeholder="Masukkan No Telp">
+                    <label class="mb-1 mt-2">Nama</label> <br>
+                    <input class="form-control" type="text" name="nama" placeholder="Masukkan Nama">
+                    <label class="mb-1 mt-2">No Telepon</label> <br>
+                    <input class="form-control" type="number" name="tlp" placeholder="Masukkan No Telp">
 
-                        <h3 class="mt-3 mb-2">Metode Pembayaran</h3>
-                        <label class="w-100 border p-2 rounded" for="">
-                            <input class="mr-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                            Bayar Di Tempat
-                        </label>
-                        <label class="w-100 border p-2 rounded" for="">
-                            <input class="mr-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                            Transfer Bank
-                        </label>
-                    </form>
+                    <h3 class="mt-3 mb-2">Metode Pembayaran</h3>
+                    <label class="w-100 border p-2 rounded" for="">
+                        <input class="mr-2" type="radio" name="metodepembayaran" id="metodepembayaran2" value="transfer" checked>
+                        Transfer Bank
+                    </label>
+                    <label class="w-100 border p-2 rounded" for="">
+                        <input class="mr-2" type="radio" name="metodepembayaran" id="metodepembayaran1" value="kasir">
+                        Ke Kasir
+                    </label>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-sm btn-success">Lanjutkan</button>
+                    <button class="btn btn-block btn-success" id="lanjut-order2">Lanjutkan Pembayaran</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="5000" id="modal-pembayaran">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pemayaran</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row pt-2">
+                        <div class="col-12 mb-2">
+                            <p class=" font-weight-bold text-dark">Nama<span class="font-weight-bold float-right" id="nama"></span></p>
+                            <p class=" font-weight-bold text-dark">No Meja<span class="font-weight-bold float-right" id="no-meja"></span></p>
+                        </div>
+                        <div class="col-12" id="list-menu">
+                        </div>
+                        <div class="col-12 pb-2 border-bottom">
+                            <p class=" font-weight-bold text-dark">Metode Pembayaran<span class="font-weight-bold float-right" id="pembayaran"></span></p>
+                        </div>
+                        <div class="col-12 pt-3">
+                            <p class="font-weight-bold mb-3">Total Pembayaran<span class="font-weight-bold float-right" id="total-pembayaran"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-block btn-success" id="lanjut-order3">Lanjutkan Pembayaran</button>
                 </div>
             </div>
         </div>

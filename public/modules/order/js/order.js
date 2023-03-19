@@ -94,7 +94,41 @@ $(document).ready(function () {
     }
 
     $("#lanjut-order1").on("click", function (params) {
-        localStorage.setItem("ORDER", JSON.stringify(orderDetailed));
+        $("#metode-pembayaran").modal("show");
+    })
 
+    $("#lanjut-order2").on("click", function (params) {
+        const nama = $("input[name=nama]").val();
+        const tlp = $("input[name=tlp]").val();
+        const metodepembayaran = $("input[name=metodepembayaran]:checked").val()
+
+        let orderData = {
+            menu: orderDetailed,
+            pembayaran: {
+                nama: nama,
+                tlp: tlp,
+                metodepembayaran: metodepembayaran
+            }
+        };
+
+        $("#metode-pembayaran").modal("hide");
+        $("#modal-pembayaran").modal("show");
+
+        let totalOrder = 0;
+        $("#nama").html(nama);
+        $.each(orderDetailed, function (key, value) {
+            $("#list-menu").append('<p class="mb-0">' + value.title + '<span class="font-weight-normal float-right">' + idr(value.total.toString()) + '</span></p>');
+            totalOrder = totalOrder + parseInt(value.total);
+        })
+
+        let pembayaran = "";
+        if (metodepembayaran == "kasir") {
+            pembayaran = "Langsung Kasir";
+        } else if (metodepembayaran == "transfer") {
+            pembayaran = "Transfer Bank";
+        }
+
+        $("#pembayaran").html(pembayaran);
+        $("#total-pembayaran").html(idr(totalOrder.toString()));
     })
 })
