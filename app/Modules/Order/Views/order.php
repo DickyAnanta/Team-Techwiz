@@ -1,5 +1,41 @@
 <section class="order mb-5">
     <h2 data-aos="fade-down">Pilih Produk</h2>
+
+    <!-- modal metpem -->
+    <div class="modal" tabindex="-1" id="metodepembayaran">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Metode Pembayaran</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <label class="mb-1 mt-2">Nama</label> <br>
+                        <input class="form-control" type="text" placeholder="Masukkan Nama">
+                        <label class="mb-1 mt-2">No Telepon</label> <br>
+                        <input class="form-control" type="number" placeholder="Masukkan No Telp">
+
+                        <h3 class="mt-3 mb-2">Metode Pembayaran</h3>
+                        <label class="w-100 border p-2 rounded" for="">
+                            <input class="mr-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            Bayar Di Tempat
+                        </label>
+                        <label class="w-100 border p-2 rounded" for="">
+                            <input class="mr-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            Transfer Bank
+                        </label>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-sm btn-success">Lanjutkan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- menu -->
     <div class="row menu d-flex justify-content-between" id="makanan">
         <div class="col-md-7">
@@ -89,11 +125,33 @@
                         </div>
                         <div class="col-12">
                             <div class="input-group p-0 m-0 ">
-                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Masukkan Catatan">
+                                <input type="text" class="form-control mb-3" aria-label="Amount (to the nearest dollar)" placeholder="Masukkan Catatan">
                             </div>
                         </div>
                     </div>
-                    <p>Tidak ada pesanan</p>
+                    <div class="row">
+                        <div class="col-7">
+                            <p class="float-left p-0 m-1">Burger Special <span class="text-success">RP25.000</span></p>
+                        </div>
+                        <div class="col-1">
+                            <a href="" class="btn btn-sm text-success">+</a>
+                        </div>
+                        <div class="col-1">
+                            <label for="" class="float-right pt-1">1</label>
+                        </div>
+                        <div class="col-1">
+                            <a href="" class="btn btn-sm text-danger">-</a>
+                        </div>
+                        <div class="col-2">
+                            <a href="" class="btn btn-sm btn-danger float-right"><i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-group p-0 m-0 ">
+                                <input type="text" class="form-control mb-3" aria-label="Amount (to the nearest dollar)" placeholder="Masukkan Catatan">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="card-footer bg-white border-top text-muted">
@@ -105,7 +163,7 @@
                             <h4 class="float-right">Rp 0,00</h4>
                         </div>
                     </div>
-                    <a href="/order/metodepembayaran" class="btn btn-success w-100">Lanjutkan Pesanan</a>
+                    <a href="" data-toggle="modal" data-target="#metodepembayaran" class="btn btn-success w-100">Lanjutkan Pesanan</a>
                 </div>
             </div>
         </div>

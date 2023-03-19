@@ -16,7 +16,7 @@
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="/beranda" class="bar">Beranda</a>
+                        <a href="/menu" class="bar">Beranda</a>
                     </li>
                     <li class="nav-item">
                         <a href="/menu/v2" class="bar">Menu</a>
