@@ -105,6 +105,7 @@
                 <div class="card-header">
                     <h3 class="text-center">Pesanan</h3>
                 </div>
+<<<<<<< Updated upstream
                 <div class="card-body">
                     <div class="row">
                         <div class="col-7">
@@ -152,6 +153,10 @@
                             </div>
                         </div>
                     </div>
+=======
+                <div class="card-body" id="detailed-order-list">
+
+>>>>>>> Stashed changes
                 </div>
 
                 <div class="card-footer bg-white border-top text-muted">
@@ -160,10 +165,14 @@
                             <h4 class="float-left p-0">Total Pembayaran</h4>
                         </div>
                         <div class="col-6">
-                            <h4 class="float-right">Rp 0,00</h4>
+                            <h4 class="float-right" id="total-all-order">Rp 0,00</h4>
                         </div>
                     </div>
+<<<<<<< Updated upstream
                     <a href="" data-toggle="modal" data-target="#metodepembayaran" class="btn btn-success w-100">Lanjutkan Pesanan</a>
+=======
+                    <button href="/order/metodepembayaran" class="btn btn-success w-100" id="lanjut-order1">Lanjutkan Pesanan</button>
+>>>>>>> Stashed changes
                 </div>
             </div>
         </div>

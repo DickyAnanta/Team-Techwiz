@@ -137,7 +137,7 @@ class MenuModel extends Model
             // -!select
             // !getreturn
             // -?order_by [!column !order (ASC, DSC)]
-            // -?limit [!lenght & !start]
+            // -?limit [!length & !start]
             // -?whereclause
 
             $query = '';
@@ -167,9 +167,9 @@ class MenuModel extends Model
                 $filterd = $this->db->query($query)->getNumRows();
             }
 
-            if (@$datas["limit"]["lenght"] > 0) {
-                $query .= ' LIMIT ' . $datas["limit"]["lenght"] . ' OFSET ' . $datas["limit"]["start"];
-            } elseif (@$datas["limit"]["lenght"] < 0) {
+            if (@$datas["limit"]["length"] > 0) {
+                $query .= ' LIMIT ' . $datas["limit"]["length"] . ' OFFSET ' . $datas["limit"]["start"];
+            } elseif (@$datas["limit"]["length"] < 0) {
                 $query .= '';
             } else {
                 $query .= ' LIMIT 10';
