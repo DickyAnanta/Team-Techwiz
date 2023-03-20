@@ -37,5 +37,15 @@ function idr(angka) {
     return 'Rp. ' + rupiah + ', 00';
 }
 
+function cstAlert(title, type, message, cobtn) {
+    Swal.fire({
+        title: title,
+        text: message,
+        type: type,
+        showConfirmButton: cobtn,
+        timer: cobtn == false ? 2000 : 0,
+    })
+}
+
 var BASE_URL = window.location.origin + "/";
 var BASE_DOMAIN = window.location.origin + "/";

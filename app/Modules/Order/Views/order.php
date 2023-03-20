@@ -1,71 +1,5 @@
 <section class="order mb-5">
     <h2 data-aos="fade-down">Pilih Produk</h2>
-
-    <!-- modal metpem -->
-    <div class="modal" tabindex="-1" id="metode-pembayaran">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Detail Pemayaran</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <label class="mb-1 mt-2">Nama</label> <br>
-                    <input class="form-control" type="text" name="nama" placeholder="Masukkan Nama">
-                    <label class="mb-1 mt-2">No Telepon</label> <br>
-                    <input class="form-control" type="number" name="tlp" placeholder="Masukkan No Telp">
-
-                    <h3 class="mt-3 mb-2">Metode Pembayaran</h3>
-                    <label class="w-100 border p-2 rounded" for="">
-                        <input class="mr-2" type="radio" name="metodepembayaran" id="metodepembayaran2" value="transfer" checked>
-                        Transfer Bank
-                    </label>
-                    <label class="w-100 border p-2 rounded" for="">
-                        <input class="mr-2" type="radio" name="metodepembayaran" id="metodepembayaran1" value="kasir">
-                        Ke Kasir
-                    </label>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-block btn-success" id="lanjut-order2">Lanjutkan Pembayaran</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" tabindex="5000" id="modal-pembayaran">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Pemayaran</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row pt-2">
-                        <div class="col-12 mb-2">
-                            <p class=" font-weight-bold text-dark">Nama<span class="font-weight-bold float-right" id="nama"></span></p>
-                            <p class=" font-weight-bold text-dark">No Meja<span class="font-weight-bold float-right" id="no-meja"></span></p>
-                        </div>
-                        <div class="col-12" id="list-menu">
-                        </div>
-                        <div class="col-12 pb-2 border-bottom">
-                            <p class=" font-weight-bold text-dark">Metode Pembayaran<span class="font-weight-bold float-right" id="pembayaran"></span></p>
-                        </div>
-                        <div class="col-12 pt-3">
-                            <p class="font-weight-bold mb-3">Total Pembayaran<span class="font-weight-bold float-right" id="total-pembayaran"></span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-block btn-success" id="lanjut-order3">Lanjutkan Pembayaran</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- menu -->
     <div class="row menu d-flex justify-content-between" id="makanan">
         <div class="col-md-7">
@@ -149,6 +83,101 @@
                         </div>
                     </div>
                     <button href="/order/metodepembayaran" class="btn btn-success w-100" id="lanjut-order1">Lanjutkan Pesanan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal metpem -->
+    <div class="modal" tabindex="-1" id="modal-order1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Pembayaran</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label class="mb-1 mt-2">Nama</label> <br>
+                    <input class="form-control" type="text" name="nama" placeholder="Masukkan Nama">
+                    <label class="mb-1 mt-2">No Telepon</label> <br>
+                    <input class="form-control" type="number" name="tlp" placeholder="Masukkan No Telp">
+
+                    <h3 class="mt-3 mb-2">Metode Pembayaran</h3>
+                    <label class="w-100 border p-2 rounded" for="">
+                        <input class="mr-2" type="radio" name="metodepembayaran" id="metodepembayaran2" value="transfer" checked>
+                        Transfer Bank
+                    </label>
+                    <label class="w-100 border p-2 rounded" for="">
+                        <input class="mr-2" type="radio" name="metodepembayaran" id="metodepembayaran1" value="kasir">
+                        Ke Kasir
+                    </label>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-block btn-success" id="lanjut-order2">Lanjutkan Pembayaran</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" id="modal-order2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pembayaran</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row pt-2">
+                        <div class="col-12 mb-2">
+                            <p class=" font-weight-bold text-dark">Nama<span class="font-weight-bold float-right" id="nama"></span></p>
+                            <p class=" font-weight-bold text-dark">No Meja<span class="font-weight-bold float-right" id="no-meja"></span></p>
+                        </div>
+                        <div class="col-12" id="list-menu">
+                        </div>
+                        <div class="col-12 pb-2 border-bottom">
+                            <p class=" font-weight-bold text-dark">Metode Pembayaran<span class="font-weight-bold float-right" id="pembayaran"></span></p>
+                        </div>
+                        <div class="col-12 pt-3">
+                            <p class="font-weight-bold mb-3">Total Pembayaran<span class="font-weight-bold float-right" id="total-pembayaran"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-block btn-success" id="lanjut-order3">Bayar Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" id="modal-order3-transfer">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pembayaran</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" id="form-kirimorder" enctype="multipart/form-data">
+                        <p>Silahkan transfer ke-rekening <b class="text-danger">BRI 7632-01-007520-53-0 a.n TechWiz Resto</b> dan upload bukti transfer.</p>
+                        <div class="ml-3 mr-3">
+                            <img id="view-struk" src="/assets/system-images/transfer.jpg" alt="Struk" style="width: 100%;">
+                        </div>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="bukti_transfer" name="bukti_transfer" accept="image/*">
+                                <label class="custom-file-label" for="bukti_transfer" id="bukti_transfer_filename">Choose file</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-block btn-success" id="lanjut-order4">Selesai</button>
                 </div>
             </div>
         </div>

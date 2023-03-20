@@ -39,6 +39,10 @@ abstract class BaseController extends Controller
 
     protected $model;
     protected $model1;
+    protected $model2;
+    protected $model3;
+    protected $model4;
+    protected $model5;
     protected $session;
 
     /**

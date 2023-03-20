@@ -11,19 +11,13 @@
                         <p class="p-0 m-0 ">No Meja :</p>
                     </div>
                     <div class="col-8">
-                        <p class="p-0 m-0  float-right">01</p>
+                        <p class="p-0 m-0  float-right"><?= @$meja["nomor"] ?></p>
                     </div>
                     <div class="col-4">
                         <p class="p-0 m-0 ">Nama :</p>
                     </div>
                     <div class="col-8">
-                        <p class="p-0 m-0  float-right">ivan</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="p-0 m-0 ">Kasir :</p>
-                    </div>
-                    <div class="col-8">
-                        <p class="p-0 m-0  float-right">01</p>
+                        <p class="p-0 m-0  float-right"><?= @$pelanggan["nama"] ?></p>
                     </div>
                 </div>
 
@@ -31,27 +25,20 @@
                     <div class="col-12">
                         <p class="text-center p-0 m-0 ">Pesanan</p>
                     </div>
-                    <div class="col-6">
-                        <p class="m-0 p-0">Nasi Goreng</p>
-                    </div>
-                    <div class="col-6">
-                        <p class="m-0 p-0 float-right text-dark">RP15.000</p>
-                    </div>
-                    <div class="col-6">
-                        <p class="m-0 p-0">Nasi Goreng</p>
-                    </div>
-                    <div class="col-6">
-                        <p class="m-0 p-0 float-right text-dark">RP15.000</p>
-                    </div>
-                </div>
-
-                <div class="row text-left p-1 bg-light border-bottom">
-                    <div class="col-6">
-                        <p class=" p-0 m-0">Jumlah Pesanan</p>
-                    </div>
-                    <div class="col-6">
-                        <p class=" float-right p-0 m-0">2</p>
-                    </div>
+                    <?php
+                    $sub_total = 0;
+                    ?>
+                    <?php if (!empty($detailed_pesanan["data"])) : ?>
+                        <?php foreach ($detailed_pesanan["data"] as $key => $value) : ?>
+                            <div class="col-6">
+                                <p class="m-0 p-0"><?= $value["title"]; ?></p>
+                            </div>
+                            <div class="col-6">
+                                <p class="m-0 p-0 float-right text-dark"><?= idr($value["harga"]) ?></p>
+                            </div>
+                            <?php $sub_total = $sub_total + $value["harga"]; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
 
                 <div class="row rounded text-left p-1 bg-light border-bottom">
@@ -59,7 +46,7 @@
                         <p class=" p-0 m-0">Sub Total</p>
                     </div>
                     <div class="col-6">
-                        <p class=" float-right p-0 m-0">RP 30.000</p>
+                        <p class=" float-right p-0 m-0"><?= idr($sub_total); ?></p>
                     </div>
                     <div class="col-6">
                         <p class=" p-0 m-0">Diskon</p>
@@ -74,31 +61,13 @@
                         <p class=" p-0 m-0">Total</p>
                     </div>
                     <div class="col-6">
-                        <p class=" float-right p-0 m-0">RP 30.000</p>
-                    </div>
-                    <div class="col-6">
-                        <p class=" p-0 m-0">Tunai</p>
-                    </div>
-                    <div class="col-6">
-                        <p class=" float-right p-0 m-0">RP 30.000</p>
-                    </div>
-                    <div class="col-6">
-                        <p class=" p-0 m-0">Non Tunai</p>
-                    </div>
-                    <div class="col-6">
-                        <p class=" float-right p-0 m-0">0</p>
-                    </div>
-                    <div class="col-6">
-                        <p class=" p-0 m-0">Kembali</p>
-                    </div>
-                    <div class="col-6">
-                        <p class=" float-right p-0 m-0">0</p>
+                        <p class=" float-right p-0 m-0"><?= idr(@$struk["total"]) ?></p>
                     </div>
                 </div>
 
                 <div class="row rounded p-1 bg-light">
                     <div class="col-12 mt-2">
-                        <p class=" text-center">15/03/2023 | 21.54</p>
+                        <p class=" text-center"><?= date("l, d F Y H:i:s", strtotime($struk["created_at"])) ?></p>
                     </div>
                 </div>
                 <p class="mt-3 text-success">Terimakasih telah order di Siredig</p>
