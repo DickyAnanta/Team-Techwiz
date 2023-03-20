@@ -1,32 +1,17 @@
 <?php
 
-namespace App\Modules\Meja\Models;
+namespace App\Modules\Order\Models;
 
 use CodeIgniter\Model;
 
-class MejaModel extends Model
+class PesananModel extends Model
 {
-    protected $tablemenu      = 'meja';
-    protected $primary_column = 'nomor';
+    protected $tablemenu      = 'pesanan';
+    protected $primary_column = '';
 
     protected function whereclause_system()
     {
         $ret = '';
-        return $ret;
-    }
-
-    public function exists($item = 0)
-    {
-        $ret = false;
-        $query = "SELECT * FROM " . $this->tablemenu;
-        if (empty($this->primary_column)) {
-            return "primary column be not empty";
-        }
-        $query .= " WHERE $this->primary_column = '" . $item . "'";
-        $data = $this->db->query($query)->getRowArray();
-        if (!empty($data)) {
-            $ret = $data;
-        }
         return $ret;
     }
 
@@ -44,7 +29,7 @@ class MejaModel extends Model
         }
     }
 
-    public function meja($id = 0, $datas = "", $type = "")
+    public function pesanan($id = 0, $datas = "", $type = "")
     {
         $ret = false;
         if (empty($type)) {
@@ -52,7 +37,7 @@ class MejaModel extends Model
         }
 
         if (empty($datas)) {
-            $datas = $this->request->getPost('PropertyName');
+            $datas = $this->request->getPost();
         }
 
         if (strtoupper($type) === "POST") {
@@ -142,6 +127,7 @@ class MejaModel extends Model
 
             $query = '';
             $query .= "SELECT " . @$datas["select"] . " FROM " . $this->tablemenu;
+            $query .= " INNER JOIN detail_pesanan ON detail_pesanan.pesanan_id = pesanan.id";
             if (!empty($this->whereclause_system())) {
                 $query .= " WHERE ";
             }
@@ -210,7 +196,7 @@ class MejaModel extends Model
 
         if (!empty($id)) {
             $id = decrypt_url($id);
-            $query_next = "SELECT" . $this->tablemenu . ".id FROM " . $this->tablemenu . "WHERE" . $this;
+            $query_next = "SELECT" . $this->tablemenu . " id.FROM " . $this->tablemenu . "WHERE" . $this;
         }
     }
 }

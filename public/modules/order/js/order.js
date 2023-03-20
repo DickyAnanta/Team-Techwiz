@@ -1,6 +1,7 @@
 $(document).ready(function () {
   let orderDetailed = {};
   let lastPic = {};
+  let orderData = {};
 
   $(".tambah-menu").on("click", function () {
     const menuId = $(this).data("menuid");
@@ -94,7 +95,11 @@ $(document).ready(function () {
   }
 
   $("#lanjut-order1").on("click", function (params) {
-    $("#metode-pembayaran").modal("show");
+    if ($.isEmptyObject(orderDetailed)) {
+      cstAlert("Order Error", "error", "Mohon untuk memilih menu terlebih dahulu ya kak :)", true);
+    } else {
+      $("#modal-order1").modal("show");
+    }
   })
 
   $("#lanjut-order2").on("click", function (params) {
@@ -102,33 +107,101 @@ $(document).ready(function () {
     const tlp = $("input[name=tlp]").val();
     const metodepembayaran = $("input[name=metodepembayaran]:checked").val()
 
-    let orderData = {
-      menu: orderDetailed,
-      pembayaran: {
-        nama: nama,
-        tlp: tlp,
-        metodepembayaran: metodepembayaran
+    if (nama == "" || tlp == "") {
+      cstAlert("Order Error", "error", "Hai kak, mohon untuk melengkapi data pemesanan ya. Terimakasih :)", true);
+    } else {
+      orderData = {
+        menu: orderDetailed,
+        pembayaran: {
+          nama: nama,
+          tlp: tlp,
+          metodepembayaran: metodepembayaran
+        }
+      };
+
+      let totalOrder = 0;
+      $.each(orderDetailed, function (key, value) {
+        $("#list-menu").append('<p class="mb-0">' + value.title + '<span class="font-weight-normal float-right">' + idr(value.total.toString()) + '</span></p>');
+        totalOrder = totalOrder + parseInt(value.total);
+      })
+
+      let pembayaran = "";
+      if (metodepembayaran == "kasir") {
+        pembayaran = "Langsung Kasir";
+      } else if (metodepembayaran == "transfer") {
+        pembayaran = "Transfer Bank";
       }
-    };
 
-    $("#metode-pembayaran").modal("hide");
-    $("#modal-pembayaran").modal("show");
+      $("#nama").html(nama);
+      $("#pembayaran").html(pembayaran);
+      $("#total-pembayaran").html(idr(totalOrder.toString()));
 
-    let totalOrder = 0;
-    $("#nama").html(nama);
-    $.each(orderDetailed, function (key, value) {
-      $("#list-menu").append('<p class="mb-0">' + value.title + '<span class="font-weight-normal float-right">' + idr(value.total.toString()) + '</span></p>');
-      totalOrder = totalOrder + parseInt(value.total);
-    })
-
-    let pembayaran = "";
-    if (metodepembayaran == "kasir") {
-      pembayaran = "Langsung Kasir";
-    } else if (metodepembayaran == "transfer") {
-      pembayaran = "Transfer Bank";
+      $("#modal-order1").modal("hide");
+      $("#modal-order2").modal("show");
     }
+  })
 
-    $("#pembayaran").html(pembayaran);
-    $("#total-pembayaran").html(idr(totalOrder.toString()));
+  $("#lanjut-order3").on("click", function (params) {
+    cstAlert("Order Info", "info", "Hai kak, mohon dipastikan kembali ya untuk pemesanannya :)", false);
+    setTimeout(function () {
+      $("#modal-order2").modal("hide");
+      if (orderData.pembayaran.metodepembayaran.toUpperCase() == "TRANSFER") {
+        $("#modal-order3-transfer").modal("show");
+      } else if (orderData.pembayaran.metodepembayaran.toUpperCase() == "KASIR") {
+        $("#modal-order3-kasir").modal("show");
+      }
+    }, 3000)
+
+  })
+
+  $("#lanjut-order4").on("click", function () {
+    $("#form-kirimorder").submit();
+  });
+
+  let picPhoto = false;
+
+  function viewPhoto(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        picPhoto = true;
+        $('#view-struk').attr('src', e.target.result);
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $("#bukti_transfer").change(function () {
+    viewPhoto(this);
+  });
+
+  $("#form-kirimorder").on("submit", function (e) {
+    e.preventDefault();
+    if (picPhoto === false) {
+      cstAlert("Order Error", "error", "Hai kak, mohon untuk memasukkan screenshoot bukti transfer ya untuk melanjutkan pesanan. Terimakasih :)", true);
+    } else {
+      let formData = new FormData(this);
+      formData.append("order_data", JSON.stringify(orderData));
+
+      $.ajax({
+        url: BASE_URL + "order/order_proses",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function (response) {
+          if (isJson(response)) {
+            response = JSON.parse(response);
+            window.location.replace(BASE_URL + "order/selesai/" + response.pesanan_id);
+          }
+        },
+        error: function (response) {
+          console.log("error");
+          console.log(response);
+        }
+      });
+    }
   })
 })
