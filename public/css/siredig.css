@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
 :root {
     --primary: #28a745;
     --putih: #fff;
@@ -244,8 +245,8 @@ h3 {
     margin: auto;
     border-radius: 20px;
     width: auto;
-    min-width: 130px;
-    max-width: 130px;
+    min-width: 175px;
+    max-width: 175px;
     height: auto;
     text-align: center;
     margin-right: 20px;
@@ -842,49 +843,62 @@ main {
         padding: 1rem;
         font-size: 0.8rem;
     }
+
     h3 {
         font-size: 13px !important;
     }
+
     h2 {
         font-size: 16px !important;
     }
+
     /* beranda */
     .beranda .header img {
         width: 150px !important;
         height: auto;
     }
+
     .beranda .header a,
     .beranda .header p {
         margin: 5px;
         font-size: 10px;
     }
+
     .beranda .header h1,
     .beranda .header h2,
     .beranda .header span {
         font-size: 1rem;
     }
+
     .beranda .konten {
         padding: 10px;
     }
+
     .beranda .konten .link {
         padding: 1px 7px !important;
     }
+
     .beranda .konten .box p {
         margin-bottom: 0 !important;
     }
+
     .beranda .jumbotron img {
         width: 150px !important;
     }
+
     .beranda .jumbotron h2 {
         font-size: 13px !important;
     }
+
     .beranda .jumbotron p {
         font-size: 10px;
         padding: 0 !important;
     }
+
     .beranda .jumbotron a {
         font-size: 10px;
     }
+
     /* beranda */
     /* boxmenu */
     .sec .box {
@@ -892,39 +906,48 @@ main {
         height: 170px !important;
         cursor: pointer;
     }
+
     .beranda .sec {
         cursor: pointer !important;
     }
+
     .sec .box img {
         width: 100% !important;
         height: auto !important;
     }
+
     .sec .box h4 {
         font-size: 11px !important;
     }
+
     .sec .box p {
         width: 100px;
         padding: 0;
         font-size: 10px;
         margin: 0;
     }
+
     .sec .box a {
         font-size: 10px;
         padding: 0;
     }
+
     .sec {
         color: transparent;
     }
+
     /* boxmenu */
     /* menu */
     .menu .kategori {
         display: flex;
         justify-content: center;
     }
+
     .menu .kategori a {
         font-size: 10px !important;
         padding: 5px 24px !important;
     }
+
     /* menu */
     /* order */
     .order .struk {
@@ -934,29 +957,36 @@ main {
         left: 0;
         right: 0;
     }
+
     .order .struk h3 {
         font-size: 16px !important;
     }
+
     .order .struk .card-body {
         overflow: scroll;
     }
+
     .order .struk .card-footer .col-6 h4 {
         padding: 5px 0 !important;
     }
+
     .order .struk input {
         margin-bottom: 1rem;
     }
+
     /* order */
     /* metodepembayaran */
     .pembayaran .data {
         margin: 8px;
     }
+
     .pembayaran .sticky-top .pilihmenu .card {
         position: relative !important;
         margin-top: 10px !important;
         width: 100%;
         margin: 0px;
     }
+
     /* metodepembayaran */
     /* pesanan */
     .pesanan .container {
@@ -964,63 +994,79 @@ main {
         padding: 0;
         margin: 0;
     }
+
     .pesanan img {
         height: 30px;
     }
+
     .pesanan td {
         margin: 0;
         height: 30px;
         line-height: 30px;
         font-size: 10px;
     }
+
     .pesanan th {
         padding: 5px;
         font-size: 12px;
     }
+
     .pesanan td {
         padding: 3px;
     }
+
     .pesanan span {
         color: #28a745;
         font-weight: 500;
     }
+
     /* pesanan */
     /* bank */
     .bank .container {
         width: 90%;
         padding: 1.3rem;
     }
+
     .bank label,
     .bank span {
         font-size: 0.8rem;
         height: 2rem;
     }
+
     .bank input {
         height: 0.8rem !important;
     }
+
     .bank .card h3 {
         font-size: 0.8rem !important;
     }
+
     .bank .row {
         margin: 0 !important;
         padding: 0 !important;
     }
+
     .bank .bawah {
         margin-top: 1rem;
     }
+
     .bank .atas {
         margin-bottom: 1rem;
     }
+
     .bank .card img {
         height: 1rem;
     }
+
     /* bank */
     /* selesai */
     .selesai .card {
         width: 90%;
     }
+
     .selesai p {
         font-size: 0.8rem;
     }
+
     /* selesai */
 }
