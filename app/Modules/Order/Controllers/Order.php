@@ -42,7 +42,7 @@ class Order extends \App\Controllers\BaseController
         return $ret;
     }
 
-    public function order()
+    public function order($nomor)
     {
         $data = [];
         $datas = [
@@ -59,9 +59,12 @@ class Order extends \App\Controllers\BaseController
             "whereclause" => ""
         ];
         $menus = $this->model->menu(0, $datas, "GET", $data);
+        $meja = $nomor;
         $data = [
             "menu" => $menus,
+            "nomor" => $meja,
         ];
+        // dd($data["meja"]);
 
         return view("public/index", $data);
     }
