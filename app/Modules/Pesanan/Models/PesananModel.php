@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Modules\Beranda\Models;
+namespace App\Modules\Pesanan\Models;
 
 use CodeIgniter\Model;
 
-class BerandaModel extends Model
+class PesananModel extends Model
 {
-    protected $tablemenu      = 'menu';
-    protected $primary_column = 'title';
+    protected $table      = 'pelanggan';
+    protected $primary_column = 'telepon';
 
     protected function whereclause_system()
     {
@@ -18,7 +18,7 @@ class BerandaModel extends Model
     public function exists($item = 0)
     {
         $ret = false;
-        $query = "SELECT * FROM " . $this->tablemenu;
+        $query = "SELECT * FROM " . $this->table;
         if (empty($this->primary_column)) {
             return "primary column be not empty";
         }
@@ -34,8 +34,8 @@ class BerandaModel extends Model
     {
         $ret = false;
         if (!empty($id)) {
-            $query = "SELECT * FROM " . $this->tablemenu;
-            $query .= " WHERE menu.id = " . decrypt_url($id);
+            $query = "SELECT * FROM " . $this->table;
+            $query .= " WHERE id = " . decrypt_url($id);
             $data = $this->db->query($query)->getRowArray();
             if (!empty($data)) {
                 $ret = $data;
@@ -44,7 +44,7 @@ class BerandaModel extends Model
         }
     }
 
-    public function menu($id = 0, $datas = "", $type = "")
+    public function pesanan($id = 0, $datas = "", $type = "")
     {
         $ret = false;
         if (empty($type)) {
@@ -52,7 +52,7 @@ class BerandaModel extends Model
         }
 
         if (empty($datas)) {
-            $datas = $this->request->getPost('PropertyName');
+            $datas = $this->request->getPost();
         }
 
         if (strtoupper($type) === "POST") {
@@ -68,7 +68,7 @@ class BerandaModel extends Model
             $colum = "(" . substr($colum, 0, -2) . ")";
             $values = "(" . substr($values, 0, -2) . ")";
 
-            $sql = "INSERT INTO " . $this->tablemenu . " " . $colum . "VALUE" . $values;
+            $sql = "INSERT INTO " . $this->table . " " . $colum . "VALUE" . $values;
 
             if ($this->db->query($sql)) {
                 $ret = [
@@ -92,7 +92,7 @@ class BerandaModel extends Model
                     }
                 }
 
-                $sql = "INSERT INTO" . $this->tablemenu . "SET" . substr($patch_column, 0, 2) . "WHERE id = " . $id;
+                $sql = "INSERT INTO" . $this->table . "SET" . substr($patch_column, 0, 2) . "WHERE id = " . $id;
                 if ($this->db->query($sql)) {
                     $ret = [
                         "response" => true,
@@ -119,7 +119,7 @@ class BerandaModel extends Model
                         $patch_column .= $key . " = '" . $value . "', ";
                     }
                 }
-                $sql = "UPDATE " . $this->tablemenu . " SET " . substr($patch_column, 0, -2) . " WHERE id = " . $id;
+                $sql = "UPDATE " . $this->table . " SET " . substr($patch_column, 0, -2) . " WHERE id = " . $id;
                 if ($this->db->query($sql)) {
                     $ret = [
                         "response" => true,
@@ -141,14 +141,13 @@ class BerandaModel extends Model
             // -?whereclause
 
             $query = '';
-            $query .= "SELECT " . @$datas["select"] . " FROM " . $this->tablemenu;
+            $query .= "SELECT " . @$datas["select"] . " FROM " . $this->table;
             if (!empty($this->whereclause_system())) {
                 $query .= " WHERE ";
             }
             $query .= $this->whereclause_system();
 
             if (@$datas["getreturn"] == "data") {
-                // dd($datas);
                 $all_record = $this->db->query($query)->getNumRows();
             }
 
@@ -192,7 +191,7 @@ class BerandaModel extends Model
             // } elseif ($datas == 2) {
             //   $query .= "DELETE FROM" . $this->tableuser . "WHERE id = " . decrypt_url($id) ;
             // }
-            $query .=   " DELETE FROM " . $this->tablemenu . " WHERE id = " . decrypt_url($id);
+            $query .=   " DELETE FROM " . $this->table . " WHERE id = " . decrypt_url($id);
 
             if ($this->db->query($query)) {
                 $ret = true;
@@ -211,7 +210,7 @@ class BerandaModel extends Model
 
         if (!empty($id)) {
             $id = decrypt_url($id);
-            $query_next = "SELECT" . $this->tablemenu . " id.FROM " . $this->tablemenu . "WHERE" . $this;
+            $query_next = "SELECT" . $this->table . ".id FROM " . $this->table . "WHERE" . $this;
         }
     }
 }

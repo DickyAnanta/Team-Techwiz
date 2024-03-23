@@ -70,9 +70,7 @@
           <h3 class="text-center">Pesanan</h3>
         </div>
         <div class="card-body" id="detailed-order-list">
-
         </div>
-
         <div class="card-footer bg-white border-top text-muted">
           <div class="row pt-2">
             <div class="col-6">

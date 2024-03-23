@@ -18,8 +18,11 @@
                     <li class="nav-item">
                         <a href="/menu" class="bar">Beranda</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="/menu/v2" class="bar">Menu</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="/meja/v2" class="bar">Meja</a>
                     </li>
                     <li class="nav-item">
                         <a href="/order" class="bar">Order</a>

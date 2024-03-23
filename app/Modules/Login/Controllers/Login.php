@@ -40,7 +40,7 @@ class Login extends \App\Controllers\BaseController
                     'nama' => $userdata["nama"]
                 ];
                 $session->set($ses_data);
-                return redirect()->to(base_url() . '/dashboard');
+                return redirect()->to(base_url() . '/user');
             } else {
                 $session->setFlashdata('msg', 'Password salah');
                 return redirect()->to(base_url() . '/login');

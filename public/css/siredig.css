@@ -832,6 +832,36 @@ main {
     align-items: center;
 }
 
+/* meja */
+.meja p {
+    margin: 0;
+}
+
+.meja {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.meja h5 {
+    padding-left: 25%;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.meja h3 {
+    font-size: 1rem;
+}
+
+.hoper {
+    transition: ease-in-out 0.3s;
+}
+
+.hoper:hover {
+    background-color: #8affc8;
+}
+
+.nomeja .col {}
 
 /* scan */
 
@@ -903,7 +933,7 @@ main {
     /* boxmenu */
     .sec .box {
         width: 100% !important;
-        height: 170px !important;
+        height: auto;
         cursor: pointer;
     }
 
@@ -912,8 +942,8 @@ main {
     }
 
     .sec .box img {
-        width: 100% !important;
-        height: auto !important;
+        width: auto !important;
+        height: 80px !important;
     }
 
     .sec .box h4 {
@@ -934,6 +964,8 @@ main {
 
     .sec {
         color: transparent;
+        background-color: #4e4e4e !important;
+        height: auto;
     }
 
     /* boxmenu */
@@ -948,12 +980,21 @@ main {
         padding: 5px 24px !important;
     }
 
+    .menu {
+        margin-bottom: 300px;
+    }
+
+    .menu h4,
+    .menu p {
+        color: #000 !important;
+    }
+
     /* menu */
     /* order */
     .order .struk {
         position: fixed;
         bottom: -15px;
-        top: 65%;
+        top: 50%;
         left: 0;
         right: 0;
     }

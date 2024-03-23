@@ -1,34 +1,24 @@
 <?php
 
-namespace App\Modules\Meja\Controllers;
+namespace App\Modules\Pesanan\Controllers;
 
-use App\Modules\Meja\Models\MejaModel;
-use Endroid\QrCode\Color\Color;
-use Endroid\QrCode\Encoding\Encoding;
-use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow;
-use Endroid\QrCode\QrCode;
-use Endroid\QrCode\Label\Label;
-use Endroid\QrCode\Logo\Logo;
-use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
-use Endroid\QrCode\Writer\PngWriter;
+use App\Modules\Pesanan\Models\PesananModel;
 
-
-class Meja extends \App\Controllers\BaseController
+class Pesanan extends \App\Controllers\BaseController
 {
     public function __construct()
     {
-        $this->model = new MejaModel();
-        $this->model1 = new PngWriter();
+        $this->model = new PesananModel();
         // $this->model1 = new qrlib();
     }
 
-    var $table1 = "meja";
-    var $column_order = array(null, 'nomor', 'status');
+    var $table1 = "pesanan";
+    var $column_order = array(null, 'nama', 'telepon');
     var $default_order = [
-        "column" => "nomor",
+        "column" => "nama",
         "order" => "ASC"
     ];
-    var $column_select = 'id, nomor, status';
+    var $column_select = 'id, nama, telepon';
 
     public function main()
     {
@@ -52,15 +42,15 @@ class Meja extends \App\Controllers\BaseController
             ],
             "whereclause" => @$getdata["whereclause"]
         ];
-        $items = $this->model->meja(0, $datas, "GET");
+        $items = $this->model->pelanggan(0, $datas, "GET");
 
         $data = array();
         $no = @$getdata['start'];
         foreach ($items["data"] as $key => $value) {
             $no++;
             $row = array();
-            $module = 'meja';
-            $item = $value["nomor"];  //primary key items
+            $module = 'pelanggan';
+            $item = $value["nama"];  //primary key items
             $action = '';
 
             // Start variable of attributs edit button
@@ -91,7 +81,7 @@ class Meja extends \App\Controllers\BaseController
             // 'title', 'deskripsi', 'tipe', 'harga', 'stok
             $row[] = '';
             $row[] = $edit;
-            $row[] = $value["status"];
+            $row[] = $value["telepon"];
             $row[] = $action;
             $data[] = $row;
         }
@@ -127,7 +117,7 @@ class Meja extends \App\Controllers\BaseController
                 ],
                 "whereclause" => $whereclause
             ];
-            $query = $this->model->meja(0, $datas, "GET");
+            $query = $this->model->pelanggan(0, $datas, "GET");
         } else {
             $whereclause = @$getdata["search"];
             $datas = [
@@ -143,7 +133,7 @@ class Meja extends \App\Controllers\BaseController
                 ],
                 "whereclause" => @$whereclause
             ];
-            $query = $this->model->meja(0, $datas, "GET");
+            $query = $this->model->pelanggan(0, $datas, "GET");
         }
 
         $check_query = check_query($query);
@@ -159,32 +149,13 @@ class Meja extends \App\Controllers\BaseController
         echo json_encode($ret);
     }
 
-    private function qr_code($id = '')
-    {
-        $dt_post = $this->request->getPost('nomor', 'kapasitas');
-        $writer = $this->model1;
-        // Create QR code
-        $qrCode = QrCode::create('meja ' . $dt_post)
-            ->setEncoding(new Encoding('UTF-8'))
-            ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
-            ->setSize(300)
-            ->setMargin(10)
-            ->setRoundBlockSizeMode(new RoundBlockSizeModeMargin())
-            ->setForegroundColor(new Color(0, 0, 0))
-            ->setBackgroundColor(new Color(255, 255, 255));
-
-        $result = $writer->write($qrCode);
-        $result->saveToFile(FCPATH . '/assets/upload/images/' . 'meja-' . $dt_post . '.png');
-        return $result;
-    }
-
     public function edit($id = '')
     {
         $ret = [];
         $dt_post = @$this->request->getPost();
 
         if (!empty($dt_post)) {
-            $exists = $this->model->exists(strtoupper($dt_post['nomor']));
+            $exists = $this->model->exists($dt_post['telepon']);
             if (empty($id)) {
                 if ($exists) {
                     $ret['alert'] = [
@@ -196,14 +167,13 @@ class Meja extends \App\Controllers\BaseController
                         'redirect_to' => ''
                     ];
                 } else {
-                    $dt_menu_pre_post = [
-                        "nomor" => strtoupper($dt_post['nomor']),
-                        "kapasitas" => strtoupper($dt_post['kapasitas']),
-                        "status" => "Available",
-                        "created_by" => ""
+                    $dt_pre_post = [
+                        "nama" => $dt_post["nama"],
+                        "telepon" => $dt_post["telepon"],
+                        "created_by" => session()->get("id")
                     ];
 
-                    $sv_data = @$this->model->meja(0, $dt_menu_pre_post, "post");
+                    $sv_data = @$this->model->pelanggan(0, $dt_pre_post, "post");
                     if ($sv_data['response']) {
                         $ret['alert'] = [
                             'title' => 'Success',
@@ -226,13 +196,13 @@ class Meja extends \App\Controllers\BaseController
                 }
             } else {
                 if (decrypt_url($id) == @$exists['id'] || ($exists == false)) {
-                    $data = [
-                        "nomor" => strtoupper($dt_post['nomor']),
-                        "kapasitas" => strtoupper($dt_post['kapasitas']),
-                        "updated_by" => "",
+                    $dt_pre_post = [
+                        "nama" => $dt_post['nama'],
+                        "telepon" => $dt_post['telepon'],
+                        "updated_by" => session()->get("id"),
                     ];
-                    $sv_data2 = @$this->model->meja($id, $data, "patch");
-                    if ($sv_data2['response']) {
+                    $sv_data = @$this->model->pelanggan($id, $dt_pre_post, "patch");
+                    if ($sv_data['response']) {
                         $ret['alert'] = [
                             'title' => 'Succsess',
                             'type' => 'success',
@@ -277,10 +247,5 @@ class Meja extends \App\Controllers\BaseController
         }
 
         return view('admin/index', $ret);
-    }
-
-    public function meja()
-    {
-        return view("public/index");
     }
 }

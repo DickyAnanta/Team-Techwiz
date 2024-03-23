@@ -72,7 +72,7 @@ class Order extends \App\Controllers\BaseController
         if (!empty($this->request->getPost())) {
             $dt_post = $this->request->getPost();
             $dt_post = json_decode($dt_post["order_data"], true);
-
+            dd($dt_post);
             $id_pelanggan = "";
             $dt_pre_post_pelanggan = [
                 "nama" => $dt_post["pembayaran"]["nama"],
@@ -133,7 +133,6 @@ class Order extends \App\Controllers\BaseController
                 "pesanan_id" => encrypt_url($id_pesanan)
             ];
         }
-
         echo json_encode($ret);
     }
 
@@ -177,5 +176,23 @@ class Order extends \App\Controllers\BaseController
         ];
 
         return view("public/index", $data);
+    }
+
+    public function riwayat_pesanan()
+    {
+        $datas_get_detailed_pesanan = [
+            "select" => "title, detail_pesanan.harga",
+            "getreturn" => "data",
+            "order_by" => [
+                "column" => "detail_pesanan.id",
+                "order" => "ASC"
+            ],
+            "limit" => [
+                "length" => -1,
+                "start" => 0
+            ],
+            "whereclause" => ""
+        ];
+        $detailed_pesanan = $this->model3->detailpesanan(0, $datas_get_detailed_pesanan, "GET");
     }
 }
