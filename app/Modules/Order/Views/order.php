@@ -101,6 +101,9 @@
           <input class="form-control" type="text" name="nama" placeholder="Masukkan Nama">
           <label class="mb-1 mt-2">No Telepon</label> <br>
           <input class="form-control" type="number" name="tlp" placeholder="Masukkan No Telp">
+          <label class="mb-1 mt-2">No Meja</label> <br>
+          <input class="form-control" type="number" name="meja" placeholder="Masukkan No Meja">
+
 
           <h3 class="mt-3 mb-2">Metode Pembayaran</h3>
           <label class="w-100 border p-2 rounded" for="">
