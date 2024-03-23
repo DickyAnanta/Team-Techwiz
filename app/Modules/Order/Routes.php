@@ -1,6 +1,7 @@
 <?php
 $routes->group('order', ['namespace' => 'App\Modules\Order\Controllers'], function ($routes) {
     $routes->get('/', 'Order::order');
+    $routes->get('(:any)', 'Order::order/$1');
     $routes->post('order_proses', 'Order::order_proses');
     $routes->get('metodepembayaran', 'Order::metodepembayaran');
     $routes->get('pembayaran', 'Order::pembayaran');

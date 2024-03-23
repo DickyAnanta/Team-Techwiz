@@ -281,6 +281,25 @@ class Meja extends \App\Controllers\BaseController
 
     public function meja()
     {
-        return view("public/index");
+        $data = [];
+        $datas = [
+            "select" => "id, nomor, kapasitas, status",
+            "getreturn" => "data",
+            "order_by" => [
+                "column" => "",
+                "order" => ""
+            ],
+            "limit" => [
+                "lenght" => -1,
+                "start" => 0
+            ],
+            "whereclause" => ""
+        ];
+        $mejas = $this->model->meja(0, $datas, "GET", $data);
+        $data = [
+            "meja" => $mejas,
+        ];
+        // dd($data);
+        return view("public/index", $data);
     }
 }
